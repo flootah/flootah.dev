@@ -1,0 +1,68 @@
+@font-face {
+    font-family: 'pixel';
+    src: url('../src/font/04B03.TTF');
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    color: inherit;
+}
+
+body {
+    background-color: #111;
+}
+
+.video-container {
+    z-index: -100;
+    overflow: hidden;
+    max-height: 100%;
+    width: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    text-align: center;
+}
+
+button#state, button#mute {
+    position: relative;
+    z-index: 100;
+}
+
+#wakaba {
+    width: auto;
+    height: 100%;
+    z-index: -100;
+    object-fit: cover;
+}
+
+.infocontainer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    background-color: rgba(10, 10, 10, 0);
+    font-family: 'pixel';
+    color: #ef85f7;
+    visibility: hidden;
+    padding: 15px;
+}
+
+.infocontainer #left {
+    flex-grow: 1;
+    text-align: left;
+}
+
+.infocontainer #right {
+    flex-grow: 1;
+    text-align: right;
+}

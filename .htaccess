@@ -1,0 +1,8 @@
+
+ErrorDocument 404 /errorpage/404error.html
+ErrorDocument 403 /errorpage/403error.html
+Options -Indexes
+
+<Files "/wakaba/wakaba.swf">
+    Allow from all
+</Files>
