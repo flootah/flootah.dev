@@ -22,7 +22,7 @@
                     <a href="https://www.4chan.org">4chan</a>
                     <a href="http://flootah.com">flootah.com</a>
                     <a href="https://soundcloud.com">soundcloud</a>
-                    <a href="https://amazon.com">amazon</a>
+                    <a href="https://github.com/flootah">github</a>
                     <a href="https://docs.google.com/spreadsheets/d/1PFf3VSkK-Qitg6Ov8lI6Si844YPo27LaVHotsmuoHw0/edit#gid=0.com">budget</a>
                     <a href="https://www.wellsfargo.com/">wellfargo</a>
 
@@ -71,7 +71,7 @@
                     <a href="https://9anime.to/">9anime</a>
                     <a href="http://fmovies.to/movies">fmovies</a>
                     <a href="https://www.nfoservers.com/control/">controlpanel</a>
-                    <a href="https://www.gametracker.com/server_info/64.94.100.74:27015/">gametracker</a>
+                    <a href="https://www.youtube.com/watch?v=AQBh9soLSkI">lo-fi radio</a>
                     <a href="https://www.noisli.com/">noisli</a>
 
                 </div>
@@ -97,11 +97,17 @@
         var searchinput = document.getElementById("searchinput");
 
         searchbox.onsubmit = function()  {
+
             var url = " ";
             var input = searchinput.value.toString();
             var command = input.substring(0, input.indexOf(" "));
             var search = input.substring(input.indexOf(" "));   
-            
+
+            if (!input.replace(/\s/g, '').length) {
+                // string only contained whitespace (ie. spaces, tabs or line breaks)
+                break;
+            }
+
             switch(command) {
                 case "!yt": url="https://www.youtube.com/results?search_query=" + search;
                 break;
