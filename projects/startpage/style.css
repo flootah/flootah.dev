@@ -8,7 +8,7 @@
 }
 
 body {
-    background-color: white;
+    background-color: #111;
     color: whitesmoke;  
 }
 
@@ -97,25 +97,25 @@ div.sitelist > a:hover {
 }
 
 .tab, #first {
-    background-color: red;
+    background-color: #111;
     background-image: url("src/img/pixel/pond.gif");
     background-position: right;
 }
 
 .tab, #second {
-    background-color: green;
+    background-color: #111;
     background-image: url("src/img/pixel/sign.gif");
     background-position: center;
 }
 
 .tab, #third {
-    background-color: blue;
+    background-color: #111;
     background-image: url("src/img/pixel/deer.gif");
     background-position: center;
 }
 
 .tab, #fourth {
-    background-color: yellow;
+    background-color: #111;
     background-image: url("src/img/pixel/train.gif");
     background-position: left;
 }
