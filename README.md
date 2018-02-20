@@ -1,2 +1,2 @@
 # flootah.com
-little website
+personal website for Eduardo 'flootah' Saenz

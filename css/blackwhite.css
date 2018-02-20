@@ -5,8 +5,8 @@
     font-family: 'Assistant', serif;
 }
 
-body {
-    background-color: #111;
+::-webkit-scrollbar {
+    width: 0;
 }
 
 body, html, h1, h2 {
@@ -66,6 +66,7 @@ p {
 }
 
 .body {
+    overflow: scroll;
     position: fixed;
     top: 0px;
     left: 0px;

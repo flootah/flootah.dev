@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<title> ~ </title>
+<link rel="stylesheet" href="index.css">
+<base href="file:///C:/Users/Eduardo/Documents/GitHub/flootah.com.nue/" target="_blank">
+
+
+
+<body onload="startTime()">
+    <div class="accent" id="top"></div>
+    <div class="time" id="time"></div>
+    <div class="containerwrapper">
+        <div class="container">
+            <div class="container-top"></div>
+
+            <div class="container-middle">
+
+                <div class="main">
+                    <div class="section">
+                            <a href="https://www.youtube.com">youtube</a>
+                            <a href="https://www.reddit.com">reddit</a>
+                            <a href="https://www.4chan.org">4chan</a>
+                            <a href="http://flootah.com">flootah.com</a>
+                            <a href="https://soundcloud.com">soundcloud</a>
+
+                    </div>
+
+                    <div class="section">
+                            <a href="http://steamcommunity.com/id/Flootah">steam</a>
+                            <a href="https://discordapp.com/channels/@me">discord</a>
+                            <a href="https://mail.google.com/mail/u/1/#inbox">inbox</a>
+                            <a href="https://www.twitch.tv/">twitch</a>
+                            <a href="https://twitter.com/?lang=en">twitter</a>
+                    </div>
+
+                    <div class="section">
+                            <a href="http://www.cpp.edu/">cal poly pomona</a>
+                            <a href="https://my.cpp.edu">my cpp</a>
+                            <a href="https://docs.google.com/spreadsheets/d/1PFf3VSkK-Qitg6Ov8lI6Si844YPo27LaVHotsmuoHw0/edit#gid=0.com">budget</a>
+                            <a href="https://www.wellsfargo.com/">wellfargo</a>
+                            <a href="https://www.cpp.edu/~tvnguyen7/cs256/">tvnguyen</a>
+                            <a href="https://www.cpp.edu/~brianaf/">branaf</a>
+                    </div>
+
+                    <div class="section">
+                        <a href="https://www.masterani.me/">masterani.me</a>
+                        <a href="http://fmovies.to/movies">fmovies</a>
+                        <a href="https://github.com/flootah">github</a>
+                        <a href="https://css-tricks.com/">css tricks</a>
+                        <a href="https://stackoverflow.com/">stackoverflow</a>
+                        <a href="https://boards.4chan.org/g/">/g/</a>
+                        <a href="https://boards.4chan.org/wg/">/wg/</a>
+                    </div>
+
+                    
+                </div>
+
+                <div class="sidebar"></div>
+            </div>
+
+            <div class="container-bottom">
+                <div class="button" id="button1"></div>
+                <div class="button" id="button2"></div>
+                <div class="button" id="button3"></div>
+                <div class="search"><form method="post"><input class="searchinput" type="text" placeholder="search..."></form></div>
+                <div class="quote">asuka langeley</div>
+            </div>
+        </div>
+        
+        <div class="accent" id="division"></div>
+
+    </div>
+</body>
+
+<script>
+    function startTime() {
+            var mydate=new Date()
+            var year=mydate.getYear()
+            
+            if (year < 1000)
+                year+=1900
+            
+            var day=mydate.getDay() // Current Day of week - 2
+            var month=mydate.getMonth() // Current Month 2
+            var daym=mydate.getDate() // Current Date -24
+            var h=mydate.getHours(); //Hours
+            var m=mydate.getMinutes();//Minutes
+            var s=mydate.getSeconds();//Seconds
+            m = checkTime(m);
+            s = checkTime(s);
+            h = checkHour(h);
+            
+            //list days and months...
+            var dayarray=new Array("Sunday","Monday","Tueday","Wedday","Thuday",
+                        "Friday","Satday")
+            var montharray=new Array("Jan","Feb","Mar","Apr","May","Jun",
+                        "Jul","Aug","Sep","Oct","Nov","Dec")
+
+            time = dayarray[day]+"\xa0\xa0\xa0\xa0"+montharray[month]+" "+daym+", "+year;
+            date = h+":"+m+":"+s;
+            document.getElementById("time").innerHTML = time + "<br/>" + date;
+        
+            var t = setTimeout(function(){startTime()},1000);
+    }
+
+    function checkTime(i) {
+        if (i<10) {i = "0" + i};  // add zero in front of numbers < 10
+        return i;
+    }
+
+    function checkHour(i) {
+        if(i > 12){i -= 12};
+        return i;
+    }
+</script>
