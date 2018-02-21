@@ -22,7 +22,11 @@ changeWaifu();
 image.onclick = function() { changeWaifu() };
 
 function changeWaifu() {
-    curWaifu = Math.floor(Math.random() * names.length);
+    var rand = Math.floor(Math.random() * names.length);
+    while(curWaifu == rand) { //ensure next waifu isnt the same as current.
+    rand = Math.floor(Math.random() * names.length);
+    }
+    curWaifu = rand;
     document.getElementById("waifuname").innerHTML = names[curWaifu];
     image.style.backgroundImage = "url(src/" + files[curWaifu] + ")";
 }
