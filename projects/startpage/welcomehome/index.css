@@ -152,6 +152,7 @@ input {
 
 .main {
     color: black;
+    background-color: #ffffff;
     width: 70%;
     height: 100%;
     display: flex;
@@ -164,11 +165,12 @@ input {
     background-position: center, center;
     background-size: cover;
     margin-left: 5px;
+    background-color: #ffffff;
 }
 
 .section {
     text-align: center;
-    background-color: azure;
+    background-color: #ffffff;
     position: relative;
     padding: 10px;
     margin: 0;
