@@ -16,8 +16,8 @@ function startTime() {
     h = checkHour(h);
     
     //list days and months...
-    var dayarray=new Array("Sunday","Monday","Tueday","Wedday","Thuday",
-                "Friday","Satday")
+    var dayarray=new Array("Sunday","Monday","Tuesday","Wednesday","Thursday",
+                "Friday","Saturday")
     var montharray=new Array("Jan","Feb","Mar","Apr","May","Jun",
                 "Jul","Aug","Sep","Oct","Nov","Dec")
 
