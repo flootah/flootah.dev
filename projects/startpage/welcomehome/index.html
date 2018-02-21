@@ -1,9 +1,6 @@
 <!DOCTYPE html>
 <title> ~ </title>
 <link rel="stylesheet" href="index.css">
-<base href="file:///C:/Users/Eduardo/Documents/GitHub/flootah.com.nue/" target="_blank">
-
-
 
 <body onload="startTime()">
     <div class="accent" id="top"></div>
@@ -54,7 +51,7 @@
                     
                 </div>
 
-                <div class="sidebar"></div>
+                <div class="sidebar" id="waifupic"></div>
             </div>
 
             <div class="container-bottom">
@@ -62,7 +59,7 @@
                 <div class="button" id="button2"></div>
                 <div class="button" id="button3"></div>
                 <div class="search"><form method="post"><input class="searchinput" type="text" placeholder="search..."></form></div>
-                <div class="quote">asuka langeley</div>
+                <div class="quote" id="waifuname"></div>
             </div>
         </div>
         
@@ -71,44 +68,5 @@
     </div>
 </body>
 
-<script>
-    function startTime() {
-            var mydate=new Date()
-            var year=mydate.getYear()
-            
-            if (year < 1000)
-                year+=1900
-            
-            var day=mydate.getDay() // Current Day of week - 2
-            var month=mydate.getMonth() // Current Month 2
-            var daym=mydate.getDate() // Current Date -24
-            var h=mydate.getHours(); //Hours
-            var m=mydate.getMinutes();//Minutes
-            var s=mydate.getSeconds();//Seconds
-            m = checkTime(m);
-            s = checkTime(s);
-            h = checkHour(h);
-            
-            //list days and months...
-            var dayarray=new Array("Sunday","Monday","Tueday","Wedday","Thuday",
-                        "Friday","Satday")
-            var montharray=new Array("Jan","Feb","Mar","Apr","May","Jun",
-                        "Jul","Aug","Sep","Oct","Nov","Dec")
-
-            time = dayarray[day]+"\xa0\xa0\xa0\xa0"+montharray[month]+" "+daym+", "+year;
-            date = h+":"+m+":"+s;
-            document.getElementById("time").innerHTML = time + "<br/>" + date;
-        
-            var t = setTimeout(function(){startTime()},1000);
-    }
-
-    function checkTime(i) {
-        if (i<10) {i = "0" + i};  // add zero in front of numbers < 10
-        return i;
-    }
-
-    function checkHour(i) {
-        if(i > 12){i -= 12};
-        return i;
-    }
-</script>
+<script src="waifus.js"></script>
+<script src="time.js"></script>

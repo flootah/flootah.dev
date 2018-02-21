@@ -160,7 +160,6 @@ input {
 .sidebar {
     width: 30%;
     height: 100%;
-    background-image: url(src/bestgirl.jpg);
     background-repeat: no-repeat;
     background-position: center, center;
     background-size: cover;
