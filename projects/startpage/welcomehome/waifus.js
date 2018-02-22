@@ -19,7 +19,8 @@ var Waifus = {
         "rei ayanami",      
         "akko kagari",
         "lotte yansson",
-        "tsumugi kotobuki"
+        "tsumugi kotobuki",
+        "izumi sakurai"
     ],
 
     file:[
@@ -27,7 +28,8 @@ var Waifus = {
         "reiayanami.jpg",
         "akkokagari.jpg",
         "lotteyansson.jpg",
-        "tsumugikotobuki.png"
+        "tsumugikotobuki.png",
+        "izumisakurai.png"
     ],
 
     numWaifus:undefined,    //number of waifus detected
