@@ -25,7 +25,7 @@ var Waifus = {
 
     file:[
         "asukalangely.jpg",
-        "reiayanami.jpg",
+        "reiayanami.png",
         "akkokagari.jpg",
         "lotteyansson.jpg",
         "tsumugikotobuki.png",
