@@ -57,7 +57,7 @@ catch(WaifuMismatchError) {
 function changeWaifu() {
     var rand = Math.floor(Math.random() * Waifus.numWaifus);                        //generates random number between 0 and numWaifus - 1
     while(Waifus.curWaifu == rand) {                                                //loop ensures next waifu isn't the same as current.
-    rand = Math.floor(Math.random() * names.length);
+    rand = Math.floor(Math.random() * Waifus.numWaifus); 
     }
     Waifus.curWaifu = rand;
     document.getElementById("waifuname").innerHTML = Waifus.name[Waifus.curWaifu];  //set name
