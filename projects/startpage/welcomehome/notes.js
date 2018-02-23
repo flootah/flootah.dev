@@ -35,7 +35,7 @@ function printNotes() {
         timestampp.setAttribute("class", "timestamp");
         timestampp.setAttribute("id", "timestamp" + i);
         //append 'note' to 'notes', append content and timestamp to 'note'.
-        document.getElementsByClassName("notes").appendChild(notespan);
+        document.getElementById("notes").appendChild(notespan);
         notespan.appendChild(contentp);
         notespan.appendChild(timestampp);
         //set content and timestamp
