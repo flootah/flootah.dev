@@ -19,8 +19,8 @@ function printNotes() {
 
     for(var i = 0; i < ca.length; i = i+2) {
         //variables for note context and timestamp
-        var content = ca[i].substring(indexOf("=")+1);
-        var timestamp = ca[i+1].substring(indexOf("=")+1);;
+        var content = ca[i].substring(ca[i].indexOf("=")+1);
+        var timestamp = ca[i+1].substring(ca[i].indexOf("=")+1);;
         //create note spans and paragraphs
         var notespan = document.createElement('span');
         var contentp = document.createElement('p');
