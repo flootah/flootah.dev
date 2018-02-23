@@ -57,13 +57,13 @@ catch(WaifuMismatchError) {
  * then changes the image and name divs respectively.
  */
 function changeWaifu() {
-    var rand = Math.floor(Math.random() * Waifus.numWaifus);                        //generates random number between 0 and numWaifus - 1
-    while(Waifus.curWaifu == rand) {                                                //loop ensures next waifu isn't the same as current.
-    rand = Math.floor(Math.random() * Waifus.numWaifus); 
+    Waifus.curWaifu++;
+    if(Waifus.curWaifu >= Waifus.numWaifus) {
+        Waifus.curWaifu = 0;
     }
-    Waifus.curWaifu = rand;
     document.getElementById("waifuname").innerHTML = Waifus.name[Waifus.curWaifu];  //set name
     image.style.backgroundImage = "url(src/" + Waifus.file[Waifus.curWaifu] + ")";  //set image
 }
 
-changeWaifu();                                                                      //initialize first waifu.
+Waifus.curWaifu = Math.floor(Math.random() * Waifus.numWaifus);                            //initialize first waifu, randomly.
+changeWaifu();

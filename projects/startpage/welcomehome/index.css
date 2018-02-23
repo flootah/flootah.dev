@@ -113,6 +113,10 @@ body {
     min-width: 14px;
 }
 
+.button:hover {
+    background-color: #aaaaaa!important
+}
+
 .quote {
     color: black;
     text-align: center;
@@ -154,17 +158,28 @@ input {
     color: black;
     background-color: #ffffff;
     width: 70%;
+    min-width: 595px;
+    margin-right: 5px;
     height: 100%;
-    display: flex;
+    display: none;
+    position: relative;
+    left: 0px;
+    overflow: hidden;
+}
+
+#player {
+    height: 100%;
+    min-width: 595px;
 }
 
 .sidebar {
+    position: relative;
+    right: 0px;
     width: 30%;
     height: 100%;
     background-repeat: no-repeat;
     background-position: center, center;
     background-size: cover;
-    margin-left: 5px;
     background-color: #ffffff;
 }
 
