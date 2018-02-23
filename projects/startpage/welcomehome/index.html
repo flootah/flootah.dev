@@ -2,7 +2,7 @@
 <title> ~ </title>
 <link rel="stylesheet" href="index.css">
 
-<body onload="startTime()">
+<body>
     <div class="accent" id="top"></div>
     <div class="time" id="time"></div>
     <div class="containerwrapper">
@@ -81,9 +81,16 @@
         
         <div class="accent" id="division"></div>
 
+        <div class="notes" id="notes">
+            <form class = "newnote" id="newnote" onsubmit="newNote()">
+                <input type="submit">
+            </form>
+                <textarea id="notetaker" placeholder="note..." form="notes"></textarea>
+        </div>
     </div>
 </body>
 
 <script src="waifus.js"></script>
 <script src="time.js"></script>
 <script src="buttons.js"></script>
+<script src="notes.js"></script>

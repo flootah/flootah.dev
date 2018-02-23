@@ -31,6 +31,10 @@ body {
     width: 100vw;
 }
 
+input:focus {
+    outline: none;
+}
+
 .time {
     font-size: 20pt;
     text-align: right;
@@ -208,4 +212,45 @@ input {
     text-decoration: underline;
     background-color: #eeeeee;
     transition: background-color 0.2s ease;
+}
+
+.notes {
+    width: 850px;
+    position: relative;
+    top: 10%;
+    margin: 0px auto;
+}
+
+.notebutton {
+    content: "new note...";
+    float: right;
+}
+
+.notebutton:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.newnote {
+    width: 50%;
+}
+
+#notetaker {
+    width: 50%;
+    max-width: 70%;
+    padding: 10px;
+    outline: none;
+    border: none;
+}
+
+span.note p.content:before {
+    content: "- ";
+}
+
+span.note p.content {
+    width: 70%;
+}
+
+span.note p.timestamp {
+    text-align: right;
 }
