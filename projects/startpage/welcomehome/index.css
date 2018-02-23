@@ -27,8 +27,6 @@ body {
     background-image: url(src/bg_tile.jpg);
     background-color: #111;
     background-repeat: repeat;
-    height: 100vh;
-    width: 100vw;
 }
 
 input:focus {
@@ -41,11 +39,12 @@ input:focus {
     position: fixed;
     top: 10px;
     right: 25px;
+    z-index: 9999;
 }
 
 .containerwrapper {
     position: relative;
-    top: 10%;
+    margin: 3% 0;
     overflow-y: scroll;
     display: flex;
     flex-direction: column;
@@ -151,6 +150,7 @@ input {
     width: 100%;
     position: fixed;
     top: 0;
+    z-index: 9999;
 }
 
 .accent#division {
@@ -221,36 +221,58 @@ input {
     margin: 0px auto;
 }
 
-.notebutton {
+.newnote {
     content: "new note...";
     float: right;
 }
 
-.notebutton:hover {
+.newnote:hover {
     text-decoration: underline;
     cursor: pointer;
 }
 
-.newnote {
-    width: 50%;
+.notebutton {
+    width: 60%;
+    height: 15px;
+    background-color: #DDDDDD;
+    border: none;
+}
+
+.notebutton:focus {
+    border: none;
+    outline: none;
+}
+
+.notebutton:active {
+    background-color: #aaaaaa;
 }
 
 #notetaker {
-    width: 50%;
-    max-width: 70%;
-    padding: 10px;
+    min-width: 60%;
+    max-width: 60%;
+    height: 15px;
+    max-height: 600px;
+    padding: 0 5px;
     outline: none;
     border: none;
 }
 
-span.note p.content:before {
-    content: "- ";
-}
-
-span.note p.content {
+.note p.content {
     width: 70%;
+    white-space: pre-wrap;
+}
+.note p.timestamp {
+    text-align: right;
 }
 
-span.note p.timestamp {
-    text-align: right;
+.bullet {
+    position: absolute;
+    left: 0;
+    height: 100%;
+    width: 5px;
+    text-align: center;
+}
+
+.bullet:before {
+    content: "-";
 }
