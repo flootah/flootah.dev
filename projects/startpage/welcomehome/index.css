@@ -195,12 +195,17 @@ input {
 
 .section > a {
     height: 27px;
+    line-height: 27px;
+    padding-left: 3px;
     text-decoration: none;
     color: black;
     text-align: left;
     display: block;
+    transition: background-color 0.2s ease;
 }
 
 .section > a:hover {
     text-decoration: underline;
+    background-color: #eeeeee;
+    transition: background-color 0.2s ease;
 }
