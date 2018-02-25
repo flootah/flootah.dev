@@ -37,19 +37,37 @@ function Note(content, timestamp) {
         this.timestamp = timestamp;
 }
 
+function toggleForm() {
+    var form = document.getElementById("formwrapper");
+    var newnote = document.getElementById("newnote");
+    var display = form.style.display;
+
+    if (display == "none") {
+        form.style.display = "inline-block";                //make box visible
+        newnote.innerHTML = "cancel...";                    //empty newnote span
+    } else {
+        form.style.display = "none";                        //hide box
+        newnote.innerHTML = "new note...";                  //show newnote span
+    }
+    document.getElementById("notetaker").value = "";
+}
 /**
  * Function to create a new note from content of 'notetaker' textbox.
  * Will not create a new note without content.
  */
-  function newNote() { 
+function newNote() { 
     var textbox = document.getElementById("notetaker");                 //get textbox           
-    var time = montharray[month]+" "+daym+" "+checkHour(h)+":"+m+ampm;  //gets time
+    var time = montharray[month]+" "+daym+" "+ checkHour(h)+":"+m+ampm;  //gets time
+    if(textbox.value == "") {
+        toggleForm();
+        return;
+    }
 
-
-    if(textbox.value == "") return;
     notes.push(new Note(textbox.value, time));                          //pushes a new note object to notes array
     printNotes();                                                       //prints Notes to save
     textbox.value = "";
+    autoGrow(textbox);
+    toggleForm();
 }
 
 /**
@@ -57,8 +75,14 @@ function Note(content, timestamp) {
  * @param {index of note to be deleted} index 
  */
 function deleteNote(index) {
-    notes.splice(index, 1);
-    printNotes();
+    if(confirm("delete this note?")) {
+        notes.splice(index, 1);
+        printNotes();
+    }
+}
+
+function editNote(index, content) {
+
 }
  /**
   * loads document cookie and prints saved notes.
@@ -74,10 +98,11 @@ function printNotes() {
         var dashspan = document.createElement('div');
         var contentP = document.createElement('p');
         var timestampP = document.createElement('p');
+        var editdel = document.createElement('div');
         var notesdiv = document.getElementById("notes")
         //give classes and id's to each
-        //class:    [note, content, timestamp]
-        //id:       [note+i, content+i, timestamp+i]
+        //class:    [note, content, timestamp]...
+        //id:       [note+i, content+i, timestamp+i]...
         notespan.setAttribute("class", "note");
         notespan.setAttribute("id", "note" + i);
         dashspan.setAttribute("class", "bullet");
@@ -86,27 +111,39 @@ function printNotes() {
         contentP.setAttribute("id", "content" + i);
         timestampP.setAttribute("class", "timestamp");
         timestampP.setAttribute("id", "timestamp" + i);
+        editdel.setAttribute("class", "editdel");
+        editdel.setAttribute("id", "editdel" + i);
         //prepend 'note' span to 'notes' div, append 'content' and 'timestamp' paragraphs to 'note' span.
         notesdiv.insertBefore(notespan, notesdiv.firstChild);
         notespan.appendChild(dashspan);
         notespan.appendChild(contentP);
+        notespan.appendChild(editdel);
         notespan.appendChild(timestampP);
         //set content and timestamp
         contentP.innerHTML = content;
         timestampP.innerHTML = timestamp;
-    }
+        //set buttons to editdel
+        var del = document.createElement('span');
+        var edit = document.createElement("span");
+        del.setAttribute("class", "del");
+        edit.setAttribute("class", "edit");
+        del.setAttribute("onclick", "deleteNote(" + i + ")");
+        edit.setAttribute("onlick", "editNote(" + i + ")");
+        editdel.appendChild(edit);
+        editdel.appendChild(del);
+    }//end for
+}//end printNotes()
 
     /**
      * clears notespace for fresh printing.
      */
-    function clearNotes() {
-        var notesdiv = document.getElementById("notes");
-        var rmnotes = document.getElementsByClassName("note");
-        var  numNotes = rmnotes.length;
-        for(i = 0; i < numNotes ; i++) {
+function clearNotes() {
+        var notesdiv = document.getElementById("notes");        
+        var rmnotes = document.getElementsByClassName("note");  
+        var  numNotes = rmnotes.length;                         
+        for(i = 0; i < numNotes ; i++) {                        
             notesdiv.removeChild(rmnotes[0]);
         }
-    }
     //save notes to cookie
     document.cookie = "notes=" + JSON.stringify(notes);
 }
@@ -121,3 +158,15 @@ function getCookie(name) {
     if (parts.length == 2) return parts.pop().split(";").shift();
     return null;
   }
+/**
+ * @author Moussawi7 https://stackoverflow.com/questions/17772260/textarea-auto-height
+ * function to auto-grow textarea to one's desires. or to the used text. whichever comes first.
+ * 
+ * @param {element to grow} element 
+ */
+  function autoGrow(element) {
+    element.style.height = "5px";
+    element.style.height = (element.scrollHeight)+"px";
+}
+
+printNotes();

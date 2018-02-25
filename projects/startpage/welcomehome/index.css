@@ -17,7 +17,7 @@
     margin: 0px;
     box-sizing: border-box;
     font-family: haxrcorp;
-    font-size: 14pt;
+    font-size: 13pt;
 }
 
 body {
@@ -36,7 +36,7 @@ input:focus {
 .time {
     font-size: 20pt;
     text-align: right;
-    position: fixed;
+    position: absolute;
     top: 10px;
     right: 25px;
     z-index: 9999;
@@ -222,7 +222,6 @@ input {
 }
 
 .newnote {
-    content: "new note...";
     float: right;
 }
 
@@ -232,10 +231,11 @@ input {
 }
 
 .notebutton {
-    width: 60%;
+    width: 100%;
     height: 15px;
     background-color: #DDDDDD;
     border: none;
+    line-height: 15px;
 }
 
 .notebutton:focus {
@@ -247,30 +247,79 @@ input {
     background-color: #aaaaaa;
 }
 
-#notetaker {
+#formwrapper {
+    font-size: 0;
     min-width: 60%;
     max-width: 60%;
+}
+
+.notecreation {
+    font-size: 0;
+}
+
+#notetaker {
+    min-width: 100%;
+    max-width: 100%;
     height: 15px;
     max-height: 600px;
     padding: 0 5px;
     outline: none;
     border: none;
+    margin-bottom: 0;
+    font-size: 15px;
+    line-height: 15px;
+}
+
+.note {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.editdel {
+    transition: opacity 0.2s ease;
+    opacity: 0;
+    flex: auto;
+}
+
+.editdel:hover {
+    transition: opacity 0.2s ease;
+    opacity: 1;
+}
+
+.edit, .del {
+    height: 14px;
+    margin: 0 5px;
+    float: right;
+}
+
+.edit:hover, .del:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.edit:before {
+    content: "edit"
+}
+
+.del:before {
+    content: "del"
 }
 
 .note p.content {
     width: 70%;
     white-space: pre-wrap;
+    word-wrap: break-word;
 }
 .note p.timestamp {
+    min-width: 100%;
     text-align: right;
 }
 
 .bullet {
-    position: absolute;
-    left: 0;
     height: 100%;
-    width: 5px;
+    width: 1%;
     text-align: center;
+    margin-right: 5px;
 }
 
 .bullet:before {

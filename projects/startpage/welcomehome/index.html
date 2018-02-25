@@ -82,10 +82,13 @@
         <div class="accent" id="division"></div>
 
         <div class="notes" id="notes">
+            <br>
             <div class="notecreation">
-                <textarea id="notetaker" placeholder="note..."></textarea>
-                <button class="notebutton" onclick="newNote()">Submit</button>
-                <span class="newnote">new note...</span>
+                <span class="newnote" id="newnote" onclick="toggleForm()">new note...</span>
+                <div id="formwrapper" style="display: none;">
+                    <textarea id="notetaker" placeholder="note..." onkeyup="autoGrow(this)"></textarea>
+                    <button class="notebutton" onclick="newNote()">Submit</button>
+                </div>
             </div>
         </div>
     </div>
