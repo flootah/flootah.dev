@@ -46,7 +46,7 @@ function toggleForm() {
 
     if (display == "none") {
         form.style.display = "inline-block";                //make box visible
-        newnote.innerHTML = "cancel...";                    //empty newnote span
+        newnote.innerHTML = "cancel";                    //empty newnote span
     } else {
         form.style.display = "none";                        //hide box
         newnote.innerHTML = "new note...";                  //show newnote span
@@ -99,7 +99,7 @@ function deleteNote(index) {
 function editPrompt(index) {
     //creation of elements and getting note element
     var noteDiv = document.getElementById("note" + index);            //note div
-    var noteContent = document.getElementById("content" + index).innerHTML;               // note's context paragraph
+    var noteContent = document.getElementById("content" + index);     // note's context paragraph
     var noteTimestamp = document.getElementById("timestamp" + index);           //note's timestamp
     var editInput = document.createElement("textarea");                         // new input element
     var saveEdit = document.createElement("div");                               // new savecancel div, like editdel.
@@ -110,15 +110,14 @@ function editPrompt(index) {
     editInput.setAttribute("class", "content");
     editInput.setAttribute("id", "editInput" + index);
     editInput.setAttribute("onkeyup", "autoGrow(this)");
-    editInput.innerHTML = noteContent;
+    editInput.innerHTML = noteContent.innerHTML;
+    editInput.style.height = noteContent.clientHeight+3 + "px";
     saveEdit.setAttribute("class", "savecancel");
     saveEdit.setAttribute("id", "savecancel" + index);
     save.setAttribute("class", "save");
     cancel.setAttribute("class", "cancel");
     cancel.setAttribute("onclick", "printNotes()");
     save.setAttribute("onclick", "editNote(" + index + ")");
-    //TODO set onlicks
-
     //hide note elements
     document.getElementById("content" + index).style.display = "none";
     document.getElementById("editdel" + index).style.display = "none";
@@ -127,6 +126,7 @@ function editPrompt(index) {
     saveEdit.appendChild(cancel);
     noteDiv.insertBefore(editInput, noteTimestamp);
     noteDiv.insertBefore(saveEdit, noteTimestamp);
+    editInput.focus();
 }
 
 function editNote(index) {
