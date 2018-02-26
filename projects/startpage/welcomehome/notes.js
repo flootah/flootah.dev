@@ -35,6 +35,8 @@ if(getCookie("notes") != null) {
 function Note(content, timestamp) {
         this.content = content;
         this.timestamp = timestamp;
+        this.edited = false;
+        this.editdate = null;
 }
 
 function toggleForm() {
@@ -81,18 +83,73 @@ function deleteNote(index) {
     }
 }
 
-function editNote(index, content) {
+/**
+ * so... when edit is clicked, we do a few things...
+ * -replace p in note div with an input element that contains the previous note.
+ * -enter to submit?
+ * -when this input submits, call another fuction to set that note's edited and editdate values
+ * -change the edit and del to submit... and cancel
+ *      -probs do this thru either changing the spans ore hiding the element and making a new one
+ * -this will replace the editdel thingy?
+ * -also onkeyup(resizer)
+ * 
+ * @param {index of note to be edited} index 
+ * @param {content of note before edit} content 
+ */
+function editPrompt(index) {
+    //creation of elements and getting note element
+    var noteDiv = document.getElementById("note" + index);            //note div
+    var noteContent = document.getElementById("content" + index).innerHTML;               // note's context paragraph
+    var noteTimestamp = document.getElementById("timestamp" + index);           //note's timestamp
+    var editInput = document.createElement("textarea");                         // new input element
+    var saveEdit = document.createElement("div");                               // new savecancel div, like editdel.
+    var save = document.createElement("span");                                  // new save span
+    var cancel = document.createElement("span");                                // new cancel span
 
+    //adding attributes to new elements
+    editInput.setAttribute("class", "content");
+    editInput.setAttribute("id", "editInput" + index);
+    editInput.setAttribute("onkeyup", "autoGrow(this)");
+    editInput.innerHTML = noteContent;
+    saveEdit.setAttribute("class", "savecancel");
+    saveEdit.setAttribute("id", "savecancel" + index);
+    save.setAttribute("class", "save");
+    cancel.setAttribute("class", "cancel");
+    cancel.setAttribute("onclick", "printNotes()");
+    save.setAttribute("onclick", "editNote(" + index + ")");
+    //TODO set onlicks
+
+    //hide note elements
+    document.getElementById("content" + index).style.display = "none";
+    document.getElementById("editdel" + index).style.display = "none";
+    //combine elements and replace
+    saveEdit.appendChild(save);
+    saveEdit.appendChild(cancel);
+    noteDiv.insertBefore(editInput, noteTimestamp);
+    noteDiv.insertBefore(saveEdit, noteTimestamp);
 }
+
+function editNote(index) {
+    var curNote = notes[index]
+    //set note from notes[index] to the value of the edit textbox
+    curNote.content = document.getElementById("editInput" + index).value;   //edit content
+    curNote.edited = true;                                                  //set edited to true
+    var time = montharray[month]+" "+daym+" "+ checkHour(h)+":"+m+ampm;     
+    curNote.editdate = time;                                                //set edited time
+    
+    printNotes();
+}
+
  /**
   * loads document cookie and prints saved notes.
   */
 function printNotes() {
     clearNotes();
     for(var i = 0; i < notes.length; i++) {
+        var curNote = notes[i];
         //variables for note context and timestamp
-        var content = notes[i].content;
-        var timestamp = notes[i].timestamp;
+        var content = curNote.content;
+        var timestamp = curNote.timestamp;
         //create note spans and paragraphs, indentify 'notes' div
         var notespan = document.createElement('div');
         var dashspan = document.createElement('div');
@@ -122,13 +179,18 @@ function printNotes() {
         //set content and timestamp
         contentP.innerHTML = content;
         timestampP.innerHTML = timestamp;
+        // if note is edited, put a * after timestamp, and make a highlight that lets you know it was edited.
+        if(notes[i].edited) {
+            timestampP.innerHTML = timestamp + "*";
+            timestampP.setAttribute("title", "edited " + curNote.editdate);
+        }
         //set buttons to editdel
         var del = document.createElement('span');
         var edit = document.createElement("span");
         del.setAttribute("class", "del");
         edit.setAttribute("class", "edit");
         del.setAttribute("onclick", "deleteNote(" + i + ")");
-        edit.setAttribute("onlick", "editNote(" + i + ")");
+        edit.setAttribute("onclick", "editPrompt(" + i + ")");
         editdel.appendChild(edit);
         editdel.appendChild(del);
     }//end for
