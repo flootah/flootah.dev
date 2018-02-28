@@ -1,16 +1,4 @@
 /**
- * gameplan:
- * cookies store notes in a format of note0 = "content" and timestamp0="timestamp";
- * divs are created and made using these.
- * 
- * website loads
- * cookies load and place
- * anytime a new note is made, edited, or deleted, cookies is updated.
- * okay thats it i think.
- * note editing can come later.
- */
-
-/**
  * new gameplan:
  * notes are now objects. containing content and timestamp(which can now be stored up to the second).
  * the note objects will be stored in a notes[] array. this array is then serialied and stored into the cookie 'notes'
@@ -222,7 +210,7 @@ function getCookie(name) {
   }
 /**
  * @author Moussawi7 https://stackoverflow.com/questions/17772260/textarea-auto-height
- * function to auto-grow textarea to one's desires. or to the used text. whichever comes first.
+ * function to auto-grow textarea to one's desires. or to the text's used space. whichever comes first.
  * 
  * @param {element to grow} element 
  */
@@ -231,4 +219,16 @@ function getCookie(name) {
     element.style.height = (element.scrollHeight)+"px";
 }
 
+/**
+ * creates an expiry date for the cookie. set to 10 years from load time.
+ */
+
+function setCookie() {
+    var d = new Date();
+    d.setTime(d.getTime() + (10*365*24*60*60*1000));
+    var expires = "expires=" + d.toUTCString();
+    document.cookie = expires;
+}
+
+setCookie();
 printNotes();
