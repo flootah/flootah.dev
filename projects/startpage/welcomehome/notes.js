@@ -9,10 +9,10 @@
  */
 
 //creation of notes array.
-var notes = [];
-var form = document.getElementById("newnote");
 if(getCookie("notes") != null) {
     notes = JSON.parse(getCookie("notes"));
+} else {
+    var notes = [];
 }
 
 /**
