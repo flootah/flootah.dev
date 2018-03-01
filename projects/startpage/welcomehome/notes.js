@@ -195,7 +195,7 @@ function clearNotes() {
             notesdiv.removeChild(rmnotes[0]);
         }
     //save notes to cookie
-    document.cookie = "notes=" + JSON.stringify(notes);
+    setCookie("notes", JSON.stringify(notes))
 }
 
 /**
@@ -223,12 +223,15 @@ function getCookie(name) {
  * creates an expiry date for the cookie. set to 10 years from load time.
  */
 
-function setCookieExpiry() {
+function setCookie(name, content) {
     var d = new Date();
     d.setTime(d.getTime() + (10*365*24*60*60*1000));
-    var expires = "expires=" + d.toUTCString() + ";";
-    document.cookie = expires + ";path=/";
+
+    var key =       name + ";";
+    var value =     content + ";";
+    var expires =   "expires=" + d.toUTCString() + ";";
+
+    document.cookie = key + value + expires + "path=/;";
 }
 
-setCookieExpiry();
 printNotes();
