@@ -223,12 +223,12 @@ function getCookie(name) {
  * creates an expiry date for the cookie. set to 10 years from load time.
  */
 
-function setCookie() {
+function setCookieExpiry() {
     var d = new Date();
     d.setTime(d.getTime() + (10*365*24*60*60*1000));
-    var expires = "expires=" + d.toUTCString();
-    document.cookie = expires;
+    var expires = "expires=" + d.toUTCString() + ";";
+    document.cookie = expires + ";path=/";
 }
 
-setCookie();
+setCookieExpiry();
 printNotes();
