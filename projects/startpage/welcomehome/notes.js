@@ -231,7 +231,7 @@ function setCookie(name, content) {
     var value =     content + ";";
     var expires =   "expires=" + d.toUTCString() + ";";
 
-    document.cookie = key + value + expires + "path=/;";
+    document.cookie = key + "=" + value + expires + "path=/;";
 }
 
 printNotes();
