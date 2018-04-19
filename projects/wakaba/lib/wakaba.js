@@ -18,12 +18,8 @@ var sound = new Howl({
 var doublejump = sound;
 
 /**
- * 
-function toFixed( num, precision ) {
-    return (+(Math.round(+(num + 'e' + precision)) + 'e' + -precision)).toFixed(precision);
-}
-**/
-
+ * loops state from 1-8
+ */
 function nextState() {
     if(state < 8) {
         state++;
@@ -34,6 +30,9 @@ function nextState() {
     //console.log(state);
 };
 
+/**
+ * mutes sound
+ */
 function mutesound() {
     if(sound._muted == true) {
         sound.mute(false);
@@ -48,11 +47,8 @@ function mutesound() {
  * @param {*} currentstate the current state before setTimeout
  */
 function pauseVid(currentstate) {
-    if(currentstate == state) {
+    while(currentstate == state) {
         vid.pause();
-        //console.log('pausing');
-    } else {
-        //console.log('continuing...');
     }
 };
 
@@ -147,9 +143,10 @@ setTimeout(function() {
 }, 1250);
 }
 
-//////////////////////////////////////////////// code for info and such
+// get infobox
 var infobox = document.getElementById("info");
 
+//toggles infobox visibility
 function toggleinfo() {
     if(infobox.style.visibility == 'hidden') {
         infobox.style.visibility = 'visible';
@@ -157,7 +154,15 @@ function toggleinfo() {
         infobox.style.visibility = 'hidden'
     };
 };
+
+//listens for clicks to toggle infobox.
 document.addEventListener("click", toggleinfo);
+
+/* 
+ * listens for keydowns
+ * M = mute
+ * I = info
+ */
 
 document.addEventListener("keydown", function(e) {
     if(e.keyCode == 73) {

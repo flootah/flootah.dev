@@ -50,11 +50,20 @@ button#state, button#mute {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
-    background-color: rgba(10, 10, 10, 0);
+    background-color: rgba(0, 0, 0, 0);
     font-family: 'pixel';
     color: #ef85f7;
     visibility: hidden;
     padding: 15px;
+    
+    user-select: none;
+    -moz-user-select: none;
+    transition: background-color 0.5s;
+    -webkit-transition: background-color 0.5s;
+}
+
+.infocontainer:hover {
+    background-color: rgba(10, 10, 10, 0.5)
 }
 
 .infocontainer #left {
