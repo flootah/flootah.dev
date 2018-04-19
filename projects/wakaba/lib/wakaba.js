@@ -47,7 +47,7 @@ function mutesound() {
  * @param {*} currentstate the current state before setTimeout
  */
 function pauseVid(currentstate) {
-        if(currentstate == state) vid.pause;
+        if(currentstate == state) vid.pause();
 };
 
 function transition() {
