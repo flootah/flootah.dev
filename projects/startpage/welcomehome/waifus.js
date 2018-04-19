@@ -8,8 +8,8 @@ image.onclick = function() { changeWaifu() };       //changes waifu onClick
  * the first 'name' corresponds to the first 'file', the second corresponds to the second, 3rd to the 3rd, etc...
  * 
  * Typically:
- * name is in format 'first last'    (it can really just be any string)
- * file is in format 'firstlast.jpg' (it can really be any name or image type)
+ * name is in format 'first last'    (it can really just be any string you want to show below the image)
+ * file is in format 'firstlast.jpg' (it can really be any name or image file type, but it's nice to keep things organized)
  * 
  * ensure that all entries are followed by a comma ( , ). The last entry need not include it.
  */
@@ -36,14 +36,14 @@ var Waifus = {
         "rinshima.jpg"
     ],
 
-    numWaifus:undefined,    //number of waifus detected
+    numWaifus:undefined,    //number of waifus detected, based on number of names.
     curWaifu:undefined,     //index of currently visible waifu
 };
 
 /**
- * checks if the number of entries in both lists agree.
+ * checks if the number of entries in both lists agree. that is, both lists are the same length.
  * if not, an error is thrown, putting up a window alert.
- * if so, numWaifus is set.
+ * if so, numWaifus is set based on number of names.
  */
 try{ 
     if(Waifus.file.length != Waifus.name.length) {
@@ -57,8 +57,8 @@ catch(WaifuMismatchError) {
 }
 
 /**
- * randomly selects a waifu that is not the current one, 
- * then changes the image and name divs respectively.
+ * function to cycle through waifus. 
+ * adds 1 to the waifu index, then updates the image and name divs respectively.
  */
 function changeWaifu() {
     Waifus.curWaifu++;
@@ -70,5 +70,5 @@ function changeWaifu() {
     image.setAttribute("title", Waifus.name[Waifus.curWaifu])
 }
 
-Waifus.curWaifu = Math.floor(Math.random() * Waifus.numWaifus);                            //initialize first waifu, randomly.
+Waifus.curWaifu = Math.floor(Math.random() * Waifus.numWaifus);  //initialize first waifu, randomly.
 changeWaifu();
