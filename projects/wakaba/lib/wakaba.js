@@ -49,6 +49,7 @@ function mutesound() {
 function pauseVid(currentstate) {
     while(currentstate == state) {
         vid.pause();
+        if(currentstate != state) break;
     }
 };
 
