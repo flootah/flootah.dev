@@ -11,7 +11,7 @@ vid.loop = true;
 var sound = new Howl({
     src: ['src/audio/doublejump.mp3', 'src/audio/doublejump.ogg'],
     loop: true,
-    autoplay: true,
+    autoplay: false,
     onload: begin,
     onend: nextState,
   } );
@@ -124,6 +124,7 @@ switch(state) {
 
 function begin() {
     console.log("begin() now running")
+    sound.play();
     transition();
     statemachine();
 };
