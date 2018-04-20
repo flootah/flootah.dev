@@ -3,7 +3,7 @@
 //
 const transitions = [0, 0.968, 1.368, 1.969, 2.903, 3.804, 4.471, 5.005, 6.540];
 //points of seek in which the video should change in state.
-var change = [1.4, 1.9, 3.3, 3.7, 5.1, 5.6, 7.5,  8.9, 9.4, 10.8, 11.2, 12.6, 13.1, 15.0,  16.4, 16.9, 18.3,  18.7, 20.1, 20.6];
+var change = [0, 1.4, 1.9, 3.3, 3.7, 5.1, 5.6, 7.5,  8.9, 9.4, 10.8, 11.2, 12.6, 13.1, 15.0,  16.4, 16.9, 18.3,  18.7, 20.1, 20.6];
 //video element
 var vid = document.getElementById("wakaba");
 //current video state
@@ -19,7 +19,6 @@ var sound = new Howl({
     loop: true,
     autoplay: false,
     onload: begin,
-    onend: nextState,
   } );
 var doublejump = sound;
 //true if currently transitioning, false otherwise.
