@@ -25,7 +25,7 @@ var doublejump = sound;
 //true if currently transitioning, false otherwise.
 var trans = false;
 /**
- * loops state from 1-8
+ * increments state from 1-8, looping, and logs it.
  */
 function nextState() {
     if(state < 8) {
@@ -33,7 +33,6 @@ function nextState() {
     } else {
         state = 1;
     }
-    transition();
     console.log(state);
 };
 
@@ -72,7 +71,6 @@ function transition() {
         vid.play();
         setTimeout(function() {
             pauseVid(0);
-            trans = false;
         }, 600);
         break;
 
@@ -81,7 +79,6 @@ function transition() {
         vid.play();
         setTimeout(function() {
             pauseVid(1);
-            trans = false;
         }, 500);
         break;
 
@@ -90,7 +87,6 @@ function transition() {
         vid.play();
         setTimeout(function() {
             pauseVid(2);
-            trans = false;
         }, 600);
         break;
 
@@ -99,7 +95,6 @@ function transition() {
         vid.play();
         setTimeout(function() {
             pauseVid(3);
-            trans = false;
         }, 600);
         break;
 
@@ -108,7 +103,6 @@ function transition() {
         vid.play();
         setTimeout(function() {
             pauseVid(4);
-            trans = false;
         }, 600);
         break;
 
@@ -117,7 +111,6 @@ function transition() {
         vid.play();
         setTimeout(function() {
             pauseVid(5);
-            trans = false;
         }, 600);
         break;
 
@@ -126,7 +119,6 @@ function transition() {
         vid.play();
         setTimeout(function() {
             pauseVid(6);
-            trans = false;
         }, 600);
         break;
 
@@ -135,7 +127,6 @@ function transition() {
         vid.play();
         setTimeout(function() {
             pauseVid(7);
-            trans = false;
         }, 600);
         break; 
 
@@ -144,7 +135,6 @@ function transition() {
         vid.play();
         setTimeout(function() {
             pauseVid(8);
-            trans = false;
         }, 1000);
         break;
 
@@ -174,7 +164,7 @@ function begin() {
  * this interval function will:
  * set the value of seek,
  * compare with with any values within change,
- * if there is a match, change state and log boop!
+ * if there is a match, change state, transition, and log boop! (200ms cooldown)
  */
 function statemachine() {
     setTimeout(function() {
@@ -184,7 +174,9 @@ function statemachine() {
             if(change.includes(seek) && trans == false) {
                 trans = true;
                 nextState();
+                transition();
                 console.log("boop!");
+                setTimeout(function(){trans= false},200)
             }
         }, 100);
     }, 1250);
