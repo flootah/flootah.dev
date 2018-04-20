@@ -68,10 +68,11 @@ function pauseVid(currentstate) {
  */
 function transition() {
     switch(state) {
-        case 0:s
+        case 0:
         vid.play();
         setTimeout(function() {
             pauseVid(0);
+            trans = false;
         }, 600);
         break;
 
@@ -80,6 +81,7 @@ function transition() {
         vid.play();
         setTimeout(function() {
             pauseVid(1);
+            trans = false;
         }, 500);
         break;
 
@@ -88,6 +90,7 @@ function transition() {
         vid.play();
         setTimeout(function() {
             pauseVid(2);
+            trans = false;
         }, 600);
         break;
 
@@ -96,6 +99,7 @@ function transition() {
         vid.play();
         setTimeout(function() {
             pauseVid(3);
+            trans = false;
         }, 600);
         break;
 
@@ -104,6 +108,7 @@ function transition() {
         vid.play();
         setTimeout(function() {
             pauseVid(4);
+            trans = false;
         }, 600);
         break;
 
@@ -112,6 +117,7 @@ function transition() {
         vid.play();
         setTimeout(function() {
             pauseVid(5);
+            trans = false;
         }, 600);
         break;
 
@@ -120,6 +126,7 @@ function transition() {
         vid.play();
         setTimeout(function() {
             pauseVid(6);
+            trans = false;
         }, 600);
         break;
 
@@ -128,6 +135,7 @@ function transition() {
         vid.play();
         setTimeout(function() {
             pauseVid(7);
+            trans = false;
         }, 600);
         break; 
 
@@ -136,6 +144,7 @@ function transition() {
         vid.play();
         setTimeout(function() {
             pauseVid(8);
+            trans = false;
         }, 1000);
         break;
 
@@ -146,7 +155,7 @@ function transition() {
     };
 
 };
-
+``
 /**
  * the "main" function of the wakaba engine.
  * starts the sound
@@ -156,7 +165,7 @@ function transition() {
 function begin() {
     console.log("begin() now running")
     sound.play();
-    nextState();
+    transition();
     statemachine();
 };
 
@@ -172,7 +181,8 @@ function statemachine() {
         seek = parseFloat(sound.seek(doublejump).toFixed(1));
         setInterval(function(){
             seek = parseFloat(sound.seek(doublejump).toFixed(1)); 
-            if(change.includes(seek)) {
+            if(change.includes(seek) && trans == false) {
+                trans = true;
                 nextState();
                 console.log("boop!");
             }
