@@ -177,7 +177,7 @@ function statemachine() {
                 console.log("boop!");
                 setTimeout(function(){trans= false},200)
             }
-        }, 100);
+        }, 50);
     }, 1250);
 }
 
