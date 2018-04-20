@@ -18,6 +18,7 @@ var sound = new Howl({
     src: ['src/audio/doublejump.mp3', 'src/audio/doublejump.ogg'],
     loop: true,
     autoplay: false,
+    volume: 0.3,
     onload: begin,
   } );
 var doublejump = sound;
