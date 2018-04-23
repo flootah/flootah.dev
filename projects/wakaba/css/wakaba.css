@@ -7,6 +7,9 @@
     box-sizing: border-box;
     padding: 0;
     margin: 0;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
 }
 
 a {
@@ -15,6 +18,7 @@ a {
 
 body {
     background-color: #111;
+    overflow: hidden;
 }
 
 .video-container {
@@ -34,8 +38,25 @@ body {
     color: white;
     font-family: Arial, Helvetica, sans-serif;
     position: absolute;
-    top: 50%;
-    left: 50%;
+    top: 30vh;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    visibility: visible;
+    width: 250px;
+}
+
+#loadingimagecover {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    overflow: hidden;
+    border-radius: 250px;
+}
+
+img#loadingimage {
+    width: 250px;
 }
 
 button#state, button#mute {
