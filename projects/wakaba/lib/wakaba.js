@@ -33,7 +33,7 @@ function nextState() {
     } else {
         state = 1;
     }
-    console.log(state);
+    //console.log(state);
 };
 
 /**
@@ -176,7 +176,7 @@ function statemachine() {
                 trans = true;
                 nextState();
                 transition();
-                console.log("boop!");
+                //console.log("boop!");
                 setTimeout(function(){trans= false},200)
             }
         }, 50);
