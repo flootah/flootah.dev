@@ -154,6 +154,7 @@ function transition() {
  */
 function begin() {
     console.log("begin() now running")
+    vid.style(visibility) = "visible";
     sound.play();
     transition();
     statemachine();
