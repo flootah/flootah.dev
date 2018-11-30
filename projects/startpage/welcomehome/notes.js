@@ -1,14 +1,28 @@
 /**
+ * @author Eduardo Saenz
+ * 
+ * script to create, edit, and delete notes displayed on the startpage. these notes are persistent between sessions, and are stored as a cookie.
+ */
+
+/**
  * new gameplan:
  * notes are now objects. containing content and timestamp(which can now be stored up to the second).
  * the note objects will be stored in a notes[] array. this array is then serialied and stored into the cookie 'notes'
  * when the page loads, we get and unserialize the 'notes' cookie and then print each note simply by looping through the array.
  * 
- * i think thats much better. i dont know if JSON need a library tho im worried about that.
+ * i think thats much better. i dont know if JSON needs a library tho im worried about that.
  * note editing becomes very easy though, just access its array and change its content.
  */
 
-//creation of notes array.
+ /**
+  * currently, notes are appended to the notes[] array at the lowest available index by iterating upwards through the array from 0, until an empty spot is found. 
+  * this solves empty spots accumulating if one deletes notes often.
+  * in cases where one has a very large amount of notes (1,000 or so...), note addition could theoretically become slow, since we iterate through 
+  * every array item to find the next available spot.
+  * in practice, no one should ever be need or be able to make this many notes, and this would only slow page loading/note addition by a few seconds at worst.
+  */
+
+//creation of notes array, if none exists
 if(getCookie("notes") != null) {
     notes = JSON.parse(getCookie("notes"));
 } else {
@@ -86,9 +100,9 @@ function deleteNote(index) {
  */
 function editPrompt(index) {
     //creation of elements and getting note element
-    var noteDiv = document.getElementById("note" + index);            //note div
-    var noteContent = document.getElementById("content" + index);     // note's context paragraph
-    var noteTimestamp = document.getElementById("timestamp" + index);           //note's timestamp
+    var noteDiv = document.getElementById("note" + index);                      // note div
+    var noteContent = document.getElementById("content" + index);               // note's context paragraph
+    var noteTimestamp = document.getElementById("timestamp" + index);           // note's timestamp
     var editInput = document.createElement("textarea");                         // new input element
     var saveEdit = document.createElement("div");                               // new savecancel div, like editdel.
     var save = document.createElement("span");                                  // new save span
@@ -225,10 +239,8 @@ function getCookie(name) {
 
 function setCookie(key, value) {
     var d = new Date();
-    d.setTime(d.getTime() + (10*365*24*60*60*1000));
-
-    var expires =   "expires=" + d.toUTCString() + ";";
-
+    d.setTime(d.getTime() + (10*365*24*60*60*1000));  //set to (year*day*hour*minute*second*mllisecond)milliseconds from current time (10 years)
+    var expires =   "expires=" + d.toUTCString() + ";"; //
     document.cookie = key + "=" + value + ";" + expires + "path=/;";
 }
 

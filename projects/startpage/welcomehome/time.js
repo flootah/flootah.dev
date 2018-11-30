@@ -1,3 +1,9 @@
+/**
+ * @author Eduardo Saenz
+ * 
+ * script that retrieves and formats the date and time shown.
+ */
+
 var mydate=new Date()
 var year=mydate.getYear()
 if (year < 1000) year+=1900;

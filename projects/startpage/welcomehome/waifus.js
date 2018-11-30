@@ -1,17 +1,25 @@
+/**
+ * @author Eduardo Saenz
+ * 
+ * script to retrieve and display a gallery images and their respective names, related image/name combinations are referred to as 'waifus'
+ * clicking the div that displays these images will cycle through the gallery, in the order or images retrieved.
+ * the first image/name displayed will be 
+ */
+
 var image = document.getElementById("waifupic");    //defines image div
 image.onclick = function() { changeWaifu() };       //changes waifu onClick
 
 /**
  * list of waifus that will show on the sidebar.
  * each waifu's name and image filename must be manually listed here.
- * both lists are respective to each other, so:
+ * the lists are respective, so:
  * the first 'name' corresponds to the first 'file', the second corresponds to the second, 3rd to the 3rd, etc...
  * 
  * Typically:
  * name is in format 'first last'    (it can really just be any string you want to show below the image)
  * file is in format 'firstlast.jpg' (it can really be any name or image file type, but it's nice to keep things organized)
  * 
- * ensure that all entries are followed by a comma ( , ). The last entry need not include it.
+ * ensure that all entries are seperated by a comma ( , ). The last entry need not include it.
  */
 var Waifus = {
     name:[
@@ -36,7 +44,7 @@ var Waifus = {
         "rinshima.jpg"
     ],
 
-    numWaifus:undefined,    //number of waifus detected, based on number of names.
+    numWaifus:undefined,    //number of waifus, based on number of names.
     curWaifu:undefined,     //index of currently visible waifu
 };
 
@@ -47,13 +55,13 @@ var Waifus = {
  */
 try{ 
     if(Waifus.file.length != Waifus.name.length) {
-        throw WaifuMismatchError;
+        throw MismatchError;
     } else {
         Waifus.numWaifus = Waifus.name.length;
     }
 }
-catch(WaifuMismatchError) {
-    window.alert("Error in waifus.js! Amount of listed names and files do not agree.") 
+catch(MismatchError) {
+    window.alert("Error in waifus.js! Number of listed names and files do not agree.") 
 }
 
 /**
