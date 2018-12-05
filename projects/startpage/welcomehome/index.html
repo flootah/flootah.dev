@@ -82,7 +82,7 @@
             <div class="notecreation">
                 <span class="newnote" id="newnote" onclick="toggleForm()">new note...</span>
                 <div id="formwrapper" style="display: none;">
-                    <textarea id="notetaker" placeholder="note..." onkeyup="autoGrow(this)"></textarea>
+                    <textarea id="notetaker" placeholder="note..." onkeydown="autoGrow(this)"></textarea>
                     <button class="notebutton" onclick="newNote()">Submit</button>
                 </div>
             </div>

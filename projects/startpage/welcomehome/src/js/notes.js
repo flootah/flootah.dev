@@ -216,8 +216,10 @@ function getCookie(name) {
  * @param {element to grow} element 
  */
   function autoGrow(element) {
-    element.style.height = "5px";
+    setTimeout(function(){
+    element.style.height = 0;
     element.style.height = (element.scrollHeight)+"px";
+    }, 10);
 }
 
 /**
