@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>flootah</title>
+        <link rel="shortcut icon" href="../../favicon.ico">
+        <link rel="stylesheet" type="text/css" href="../../css/blackwhite.css">
+        <style>
+            .images {
+                overflow:scroll;
+                max-width: 100vw;
+                margin: 0 auto;
+                display: flex;
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+
+            .pagebox {
+                position: relative;
+                transition: filter 0.2s ease;
+                border: 1px solid gainsboro;
+                margin: 25px 50px;
+                width: 590px;
+                height: 298px;
+            }
+
+            .img {
+                transition: filter 0.2s ease;
+                position: absolute;
+                top: 0;
+                left: 0;
+                bottom: 0;
+                right: 0;
+                width: 100%;
+                height: 100%;
+                background-size: cover;
+                background-repeat: no-repeat;
+                z-index: 10;
+            }
+
+            .img:hover {
+                filter: grayscale(100%) blur(3px) opacity(30%);
+                -webkit-filter: grayscale(100%) blur(3px) opacity(30%);
+            }
+
+            .imgname {
+                text-align: center;
+                line-height: 295px;
+                font-size: 24pt;
+                color: white;
+                width: 100%;
+                height: 100%;
+            }
+        </style> 
+    </head>
+    <body>
+        <div class="body">
+            <h1 id="title"><a href="../../">flootah.com</a></h1>
+
+            <p style="width: 500px;"> custom startpages to be used as a new tab/new window page, inspired by the
+                                        /html-css/ threads on /wg/. meant to serve as the 'home' of one's browser, 
+                                        and the gateway to the rest of the internet.
+                                        <br/><br/>
+                                        shown here are rebuilds of popular designs, as well as a some designs of my own.
+            </p>
+                <br/>
+            <div class="images">
+                <a href="https://flootah.com/projects/startpage/elk/">
+                <div class="pagebox">
+                    <div class="img" style="background-image: url(elk.png)"> </div>
+                    <div class="imgname">elk</div>
+                </div>
+                </a>
+                <a href="https://flootah.com/projects/startpage/welcomehome/">
+                <div class="pagebox">
+                        <div class="img" style="background-image: url(welcomehome.png)"> </div>
+                        <div class="imgname">welcomehome</div>
+                </div>
+                </a>
+             </div>
+            <p><a href="../../">return to index</a><p>
+        </div>
+    </body>
+</html>
