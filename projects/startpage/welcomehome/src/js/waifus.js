@@ -66,8 +66,8 @@ function changeWaifu() {
         Waifus.curWaifu = 0;
     }
     document.getElementById("waifuname").innerHTML = Waifus.name[Waifus.curWaifu];  //set name
-    image.style.backgroundImage = "url(src/" + Waifus.file[Waifus.curWaifu] + ")";  //set image
-    image.setAttribute("title", Waifus.name[Waifus.curWaifu])
+    image.style.backgroundImage = "url(src/waifu/" + Waifus.file[Waifus.curWaifu] + ")";  //set image
+    image.setAttribute("title", Waifus.name[Waifus.curWaifu]) //set image title
 }
 
 Waifus.curWaifu = Math.floor(Math.random() * Waifus.numWaifus);  //initialize first waifu, randomly.

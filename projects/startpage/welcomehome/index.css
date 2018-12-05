@@ -1,10 +1,10 @@
 ﻿@charset "utf-8";
 @font-face {
     font-family:"haxrcorp";
-    src:url("src/haxrcorp_4089_cyrillic_altgr.eot?") format("eot"),
-        url("src/haxrcorp_4089_cyrillic_altgr.woff") format("woff"),
-        url("src/haxrcorp_4089_cyrillic_altgr.ttf") format("truetype"),
-        url("src/haxrcorp_4089_cyrillic_altgr.svg#HaxrCorp-4089-Cyrillic-AltGr") format("svg");
+    src:url("src/font/haxrcorp_4089_cyrillic_altgr.eot?") format("eot"),
+        url("src/font/haxrcorp_4089_cyrillic_altgr.woff") format("woff"),
+        url("src/font/haxrcorp_4089_cyrillic_altgr.ttf") format("truetype"),
+        url("src/font/haxrcorp_4089_cyrillic_altgr.svg#HaxrCorp-4089-Cyrillic-AltGr") format("svg");
         font-weight:normal;font-style:normal;
 }
 
