@@ -1,6 +1,6 @@
 
-ErrorDocument 404 errorpage/404.html
-ErrorDocument 403 errorpage/403.html
+ErrorDocument 404 ./errorpage/404.html
+ErrorDocument 403 ./errorpage/403.html
 Options -Indexes
 
 deny from all
