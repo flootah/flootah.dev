@@ -7,9 +7,6 @@
     box-sizing: border-box;
     padding: 0;
     margin: 0;
-    user-select: none;
-    -moz-user-select: none;
-    -webkit-user-select: none;
 }
 
 a {
@@ -18,7 +15,6 @@ a {
 
 body {
     background-color: #111;
-    overflow: hidden;
 }
 
 .video-container {
@@ -34,42 +30,16 @@ body {
     text-align: center;
 }
 
-.loading {
-    color: white;
-    font-family: Arial, Helvetica, sans-serif;
-    position: absolute;
-    top: 30vh;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    margin: auto;
-    visibility: visible;
-    width: 250px;
-}
-
-#loadingimagecover {
-    width: 250px;
-    height: 250px;
-    object-fit: cover;
-    overflow: hidden;
-    border-radius: 250px;
-}
-
-img#loadingimage {
-    width: 250px;
-}
-
 button#state, button#mute {
     position: relative;
     z-index: 100;
 }
 
 #wakaba {
-    min-width: 100%;
-    min-height: 100%;
+    width: auto;
+    height: 100%;
     z-index: -100;
     object-fit: cover;
-    overflow: hidden;
 }
 
 .infocontainer {
@@ -80,20 +50,11 @@ button#state, button#mute {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
-    background-color: rgba(0, 0, 0, 0);
+    background-color: rgba(10, 10, 10, 0);
     font-family: 'pixel';
     color: #ef85f7;
     visibility: hidden;
     padding: 15px;
-    
-    user-select: none;
-    -moz-user-select: none;
-    transition: background-color 0.5s;
-    -webkit-transition: background-color 0.5s;
-}
-
-.infocontainer:hover {
-    background-color: rgba(10, 10, 10, 0.5)
 }
 
 .infocontainer #left {

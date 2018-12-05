@@ -4,24 +4,17 @@
         <title>wakaba</title>
         <link rel="shortcut icon" href="favicon.ico">
         <link rel="stylesheet" type="text/css" href="css/wakaba.css">
-        <script src="lib/howler.core.min.js"></script>
+        <script src="lib/howler.js"></script>
     </head>
     <body>
         <div class="video-container" id="videocontainer">
-            <div class="loading" id="loading">
-                Loading!!!
-                <br/><br/>
-                <div id="loadingimagecover">
-                <img src="src/loading.gif" id="loadingimage" title="loading!!!">
-                </div>
-            </div>
-            <video id="wakaba" preload=auto style="visibility: hidden">
+            <video id="wakaba" preload=auto>
                 <source src="src/video/wakaba.webm" type="video/webm">
                 <source src="src/video/wakaba.mp4" type="video/mp4">
-                your browser does now support the video tag. try to update it.
+                Your browser does now support the video tag.
             </video>
         </div>
-        <div class="infocontainer" id="info" style="visibility: hidden">
+        <div class="infocontainer" id="info">
             <div id="left">
                 <p>M: Mute</p>
                 <p>I or click: Info</p>
