@@ -145,6 +145,7 @@ function printNotes() {
         var timestampP = document.createElement('p');//timestamp
         var editdel = document.createElement('div');//edit/del buttons
         var notesdiv = document.getElementById("notes");//select container for all notes
+        var newnote = document.getElementsByClassName("notecreation")[0];//select newnote div
         //give classes and id's to each
         //class:    [note, content, timestamp]...
         //id:       [note+i, content+i, timestamp+i]...
@@ -159,7 +160,7 @@ function printNotes() {
         editdel.setAttribute("class", "editdel");
         editdel.setAttribute("id", "editdel" + i);
         //prepend 'note' span to 'notes' div, append 'content' and 'timestamp' paragraphs to 'note' span.
-        notesdiv.insertBefore(notespan, notesdiv.firstChild.nextSibling);
+        newnote.parentElement.insertBefore(notespan, newnote.nextSibling);
         notespan.appendChild(dashspan);
         notespan.appendChild(contentP);
         notespan.appendChild(editdel);
