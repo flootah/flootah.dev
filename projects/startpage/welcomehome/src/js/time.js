@@ -29,10 +29,14 @@ function updateTime() {
     m = checkTime(m);
     s = checkTime(s);
     
-    ampm = h >= 12 ? 'pm' : 'am';
-    time = dayarray[day]+"\xa0\xa0\xa0"+montharray[month]+" "+daym+", "+year;
-    date = checkHour(h)+":"+m+":"+s;
-    document.getElementById("time").innerHTML = time + "<br/>" + date;
+    ampm = h >= 12 ? 'pm' : 'am'; 
+    date = dayarray[day]+"\xa0\xa0\xa0"+montharray[month]+" "+daym+", "+year;
+    time = checkHour(h) + ":" + m + s;
+    var styledtime = time.substring(0, time.length-2)+'<span id=seconds>'+time.substring(time.length-2,time.length)+'</span>';
+    document.getElementById("date").innerHTML = date;
+    
+    document.getElementById("time").innerHTML = styledtime;
+
 
     var t = setTimeout(function(){updateTime()},1000);
 }
