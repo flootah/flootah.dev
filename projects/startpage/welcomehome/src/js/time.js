@@ -8,15 +8,15 @@ var h=mydate.getHours(); //Hours
 var m=mydate.getMinutes();//Minutes
 var s=mydate.getSeconds();//Seconds
 var ampm = h >= 12 ? 'pm' : 'am';
-
-    //list days and months...
-var dayarray=new Array("Sunday","Monday","Tuesday","Wednesday","Thursday",
-"Friday","Saturday")
-var montharray=new Array("Jan","Feb","Mar","Apr","May","Jun",
-"Jul","Aug","Sep","Oct","Nov","Dec")
+//list days and months...
+var dayarray=new Array("Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday");
+var montharray=new Array("Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec");
 
 updateTime();
+
+
 // time initialization and loop.
+// currently updates the time _and_ date every second, which isn't efficient but it's not slow yet so whatever.
 function updateTime() {
     mydate=new Date()
     day=mydate.getDay() // Current Day of week - 2
@@ -25,14 +25,14 @@ function updateTime() {
     h=mydate.getHours(); //Hours    
     m=mydate.getMinutes();//Minutes
     s=mydate.getSeconds();//Seconds
-    //time formatting
+    //time formatting to prepend a 0 to single digit minute and second values.
     m = checkTime(m);
     s = checkTime(s);
     
     ampm = h >= 12 ? 'pm' : 'am'; 
-    date = dayarray[day]+"\xa0\xa0\xa0"+montharray[month]+" "+daym+", "+year;
+    date = dayarray[day] + ",\xa0" + montharray[month] + " " + daym + " " + year;
     time = checkHour(h) + ":" + m + s;
-    var styledtime = time.substring(0, time.length-2)+'<span id=seconds>'+time.substring(time.length-2,time.length)+'</span>';
+    var styledtime = time.substring(0, time.length-2)+ " " + '<span id=seconds>'+time.substring(time.length-2,time.length)+'</span>';
     document.getElementById("date").innerHTML = date;
     
     document.getElementById("time").innerHTML = styledtime;
@@ -41,13 +41,15 @@ function updateTime() {
     var t = setTimeout(function(){updateTime()},1000);
 }
 
+//time formatting to prepend a 0 to single digit minute and second values.
 function checkTime(i) {
-if (i<10) {i = "0" + i};  // add zero in front of numbers < 10
-return i;
+    if (i<10) {i = "0" + i};  // add zero in front of numbers < 10
+    return i;
 }
 
+//arbitrary 24 hour time conversion
 function checkHour(i) {
-if(i > 12){i -= 12};
-if(i == 0) {i = 12};
-return i;
+    if(i > 12) { i -= 12 };
+    if(i == 0) { i = 12 };
+    return i;
 }
