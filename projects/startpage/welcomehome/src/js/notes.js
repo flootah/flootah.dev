@@ -122,7 +122,7 @@ function editNote(index) {
     //set note from notes[index] to the value of the edit textbox
     curNote.content = document.getElementById("editInput" + index).value;   //edit content
     curNote.edited = true;                                                  //set edited to true
-    var time = montharray[month]+" "+daym+" "+ checkHour(h)+":"+m+ampm;     
+    var time = montharray[month]+" "+daym+", " +year+" "+ checkHour(h)+":"+m+ampm;  //gets time
     curNote.editdate = time;                                                //set edited time
     
     printNotes();

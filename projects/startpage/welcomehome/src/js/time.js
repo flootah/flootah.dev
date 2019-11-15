@@ -1,6 +1,6 @@
 var mydate=new Date()
 var year=mydate.getYear()
-if (year < 1000) year+=1900;
+if (year < 100) year+=1900;
 var day=mydate.getDay() // Current Day of week - 2
 var month=mydate.getMonth() // Current Month 2
 var daym=mydate.getDate() // Current Date -24
