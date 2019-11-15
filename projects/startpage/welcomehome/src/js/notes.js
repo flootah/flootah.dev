@@ -47,7 +47,7 @@ function toggleForm() {
  */
 function newNote() { 
     var textbox = document.getElementById("notetaker");                 //get textbox           
-    var time = montharray[month]+" "+daym+" "+ checkHour(h)+":"+m+ampm;  //gets time
+    var time = montharray[month]+" "+daym+", " +year+" "+ checkHour(h)+":"+m+ampm;  //gets time
     if(textbox.value == "") {
         toggleForm();
         return;
