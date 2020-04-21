@@ -10,7 +10,7 @@ h1 {
   color: #373fff;
 }
 body {
-  background: #333;
+  background: #111;
 }
 body .center {
   left: 50%;
@@ -22,7 +22,7 @@ body .center {
   
 }
 span {
-  color: white;
+  color: #eee;
   display: inline-block;
   margin-bottom: 30px;
   user-select: none;
