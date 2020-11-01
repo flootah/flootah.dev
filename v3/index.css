@@ -1,0 +1,89 @@
+/***** devtools *****/
+#centerbar {
+    position: fixed;
+    left: 50vw;
+    top:0;
+    height: 100vh;
+    width: 1px;
+    background-color: teal;
+}
+
+/***** generics *****/
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #111;
+    color: #eee;
+    width: 100vw;
+}
+
+#bodywrapper {
+    width: 100%;
+    height: 100%;
+}
+
+.section {
+    text-align: center;
+    margin: 25px auto;
+}
+
+.sectiontitle {
+    font-size: 20pt;
+    font-style: oblique;
+    display: block;
+}
+
+/***** title *****/
+#title {
+    /* TODO flootah.com title screen */
+    font-size: 50pt;
+    margin: 0 auto;
+    text-align: center;
+}
+
+span.subtitle {
+    /* TODO subtitle */
+}
+
+/***** about *****/
+#about {
+    width: 600px;
+}
+
+/***** projects *****/
+#projects {
+    display: flex;
+    flex-flow: column nowrap;
+    width: 50vw;
+    max-width: 800px;
+}
+
+#p_container_center {
+    width: inherit;
+    max-width: inherit;
+    display: flex;
+    justify-content: center;
+}
+
+#p_container {
+    max-width: inherit;
+    width: 720px;
+    justify-self: center;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+}
+
+.item {
+    margin: 5px;
+    border: 1px solid white;
+    background-color: rgb(107, 60, 214);
+    width: 350px;
+    height: 200px;
+
+/***** contact *****/
+/***** links *****/
