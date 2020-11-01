@@ -8,8 +8,3 @@ function menuOff() {
     document.getElementById("burgercontainer").classList.remove("change");
     document.getElementById("sidebar").classList.remove("open");
 }
-
-function openLink() {
-    console.log("uuh...");
-    
-}
