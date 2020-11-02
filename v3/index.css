@@ -4,13 +4,20 @@
     left: 50vw;
     top:0;
     height: 100vh;
-    width: 1px;
+    width: 0px;
     background-color: teal;
 }
 
 /***** generics *****/
 * {
     box-sizing: border-box;
+    /* hide scrollbars */
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+/* Chrome, Opera, Safari scrollbar hiding*/
+*::-webkit-scrollbar {
+    display: none;
 }
 
 body {
@@ -32,6 +39,7 @@ body {
 }
 
 .sectiontitle {
+    margin: 0 0 20px 0;
     font-size: 20pt;
     font-style: oblique;
     display: block;
@@ -58,32 +66,42 @@ span.subtitle {
 #projects {
     display: flex;
     flex-flow: column nowrap;
-    width: 50vw;
-    max-width: 800px;
-}
-
-#p_container_center {
-    width: inherit;
-    max-width: inherit;
-    display: flex;
-    justify-content: center;
+    width: 800px;
+    text-align: center;
 }
 
 #p_container {
-    max-width: inherit;
-    width: 720px;
-    justify-self: center;
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: flex-start;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: inherit;
 }
 
 .item {
     margin: 5px;
     border: 1px solid white;
     background-color: rgb(107, 60, 214);
-    width: 350px;
+    width: auto;
     height: 200px;
+    /** temp */
+    padding: 20px;
+    font-size: 30pt;
+}
+
+/* change columns/size of projects list on small widths */
+@media (max-width:1000px) {
+    #projects {
+        width: 400px;
+    }
+
+    #p_container {
+        display: grid;
+        grid-template-columns: 1fr;
+        max-width: inherit;
+        min-width: inherit;
+    }
+
+}
 
 /***** contact *****/
 /***** links *****/
