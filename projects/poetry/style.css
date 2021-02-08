@@ -3,7 +3,7 @@ body {
     margin-top: 100px;
 }
 
-#poem {
+#poem, #list {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -26,7 +26,12 @@ img {
     -ms-user-select: none;
 }
 
-p {
+audio {
+    margin-top: 150px;
+    height: 25px;
+}
+
+p, a {
     color: #ddd;
     white-space: pre-wrap;
 }
@@ -35,9 +40,4 @@ p#title {
     font-size: 20pt;
     font-style: italic;
     margin-bottom: 10px;
-}
-
-audio {
-    margin-top: 150px;
-    height: 25px;
 }
