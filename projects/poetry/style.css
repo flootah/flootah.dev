@@ -1,6 +1,6 @@
 body {
     background-color: #111;
-    margin-top: 150px;
+    margin-top: 100px;
 }
 
 #center {
@@ -35,4 +35,9 @@ p#title {
     font-size: larger;
     font-style: italic;
     margin-bottom: 10px;
+}
+
+audio {
+    margin-top: 150px;
+    height: 25px;
 }
