@@ -28,11 +28,11 @@ img {
 
 p {
     color: #ddd;
-
+    white-space: pre-wrap;
 }
 
 p#title {
-    font-size: larger;
+    font-size: 20pt;
     font-style: italic;
     margin-bottom: 10px;
 }
