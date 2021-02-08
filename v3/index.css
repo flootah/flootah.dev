@@ -1,107 +1,256 @@
 /***** devtools *****/
-#centerbar {
-    position: fixed;
-    left: 50vw;
-    top:0;
-    height: 100vh;
-    width: 0px;
-    background-color: teal;
-}
+    #centerbar {
+        position: fixed;
+        left: 50vw;
+        top:0;
+        height: 100vh;
+        width: 0px;
+        background-color: teal;
+    }
 
 /***** generics *****/
-* {
-    box-sizing: border-box;
-    /* hide scrollbars */
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */
+
+    :root {
+        --main:     #111;
+        --text:     #eee;
+        --accent1:    #a55265;
+        --accent2:    #335449;
+    }
+
+    @font-face {
+        font-family: Bodoni MT;
+        src: url(./src/BodoniMT.ttf);
+    }
+
+    @font-face {
+        font-family: vapor;
+        src: url(./src/W95FA.otf);
+    }
+
+    @font-face {
+        font-family: Whitney;
+        src: url(./src/whitneybook.otf);
+    }
+
+    @font-face {
+        font-family: WhitneyItalic;
+        src: url(./src/whitneybookitalic.otf);
+    }
+
+    /* Chrome, Opera, Safari scrollbar hiding*/
+    body::-webkit-scrollbar {
+        display: none;
+    }
+
+    body {
+        font-family: Whitney;
+        font-size: 12pt;
+
+        margin: 0;
+        padding: 0;
+        background-color: var(--main);
+        color: var(--text);
+        width: 100vw;
+        box-sizing: border-box;
+        /* hide scrollbars */
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;  /* Firefox */
+    }
+
+    #bodywrapper {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        margin: 5vh auto;
+    }
+
+    .section {
+        text-align: center;
+        margin: 25px auto;
+    }
+
+    .sectiontitle {
+        margin: 0 0 20px 0;
+        font-size: 20pt;
+        font-style: oblique;
+        display: block;
+    }
+
+
+/***** navbar *****/
+@media screen and (max-width: 1000px) {
+    .navbar {
+        left: -125px !important;
+    }
 }
-/* Chrome, Opera, Safari scrollbar hiding*/
-*::-webkit-scrollbar {
+
+.navbar {
+    position: fixed;
+    top: 50vh;
+    left: 25px;
+
+    width: 50px;
+    height: fit-content;
+
+    transition:  left 0.3s ease-in-out;
+}
+
+#bubbleline {
     display: none;
-}
 
-body {
-    margin: 0;
-    padding: 0;
-    background-color: #111;
-    color: #eee;
-    width: 100vw;
-}
-
-#bodywrapper {
-    width: 100%;
+    position: absolute;
+    left: 50%;
+    top: 0;
     height: 100%;
+
+    width: 3px;
+    background-color: var(--accent1);
 }
 
-.section {
-    text-align: center;
-    margin: 25px auto;
-}
-
-.sectiontitle {
-    margin: 0 0 20px 0;
-    font-size: 20pt;
-    font-style: oblique;
-    display: block;
-}
-
-/***** title *****/
-#title {
-    /* TODO flootah.com title screen */
-    font-size: 50pt;
-    margin: 0 auto;
-    text-align: center;
-}
-
-span.subtitle {
-    /* TODO subtitle */
-}
-
-/***** about *****/
-#about {
-    width: 600px;
-}
-
-/***** projects *****/
-#projects {
+#bubblecontainer {
     display: flex;
     flex-flow: column nowrap;
-    width: 800px;
+    justify-content: center;
+    align-content: flex-end;
     text-align: center;
+    width: 100%;
 }
 
-#p_container {
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    width: inherit;
+.bubble {
+    border: 1px solid var(--accent1);
+
+    margin: 5px auto;
+    text-align: center;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    flex-grow: 1;
+    border-radius: 50%;
 }
 
-.item {
-    margin: 5px;
-    border: 1px solid white;
-    background-color: rgb(107, 60, 214);
-    width: auto;
-    height: 200px;
-    /** temp */
-    padding: 20px;
-    font-size: 30pt;
-}
 
-/* change columns/size of projects list on small widths */
-@media (max-width:1000px) {
+
+/***** title *****/
+
+    #title {
+        /* TODO flootah.com title screen */
+        font-size: 50pt;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    #profile {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: flex-start;
+        min-width: 600px;
+        width: 50vw;
+        height: 200px;
+    }
+
+    .avatar {
+        border: 3px solid var(--accent1);
+    }
+
+    #profileinfo {
+        flex-grow: 1;
+        box-sizing: border-box;
+        height: 100%;
+        padding: 16px;
+        text-align: left;
+    }
+
+    #profileinfo > span {
+        display: block;
+
+    }
+
+    #mainname {
+        font-size: 24pt;
+    }
+
+    #altname {
+        font-size: 12pt;
+    }
+
+    #plugs {
+        display: grid;
+        grid-gap: 5px;
+        height: 100%;
+        width: fit-content;
+        grid-template-columns: auto auto auto;
+        justify-content: center;
+        align-content: flex-start
+    }
+
+    .icon {
+        margin: 10px 5px;
+        width: 25px;
+        height: 25px;
+    }
+
+    .icon img {
+        display: block;
+    }
+
+/***** about *****/
+    #about {
+        width: 600px;
+    }
+
+    #talkingpoints {
+        text-align: center;
+    }
+    
+    #bio {
+        text-align: left;
+
+    }
+
+/***** projects *****/
     #projects {
-        width: 400px;
+        display: flex;
+        flex-flow: column nowrap;
+        width: 800px;
+        text-align: center;
     }
 
     #p_container {
+        margin: 0 auto;
         display: grid;
-        grid-template-columns: 1fr;
-        max-width: inherit;
-        min-width: inherit;
+        grid-template-columns: 1fr 1fr;
+        width: inherit;
+
+        transition: width 0.15s ease-in-out;
     }
 
-}
+    .item {
+        margin: 5px;
+        border: 1px solid var(--text);
+        background-color: var(--accent2);
+        width: auto;
+        height: 175px;
+        /** temp */
+        padding: 20px;
+        font-size: 30pt;
+    }
+
+    /* change columns/size of projects list on small widths */
+    @media (max-width:1000px) {
+        #projects {
+            width: 400px;
+        }
+
+        #p_container {
+            display: grid;
+            grid-template-columns: 1fr;
+            max-width: inherit;
+            min-width: inherit;
+        }
+
+    } 
 
 /***** contact *****/
 /***** links *****/

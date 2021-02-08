@@ -1,47 +1,92 @@
 <!DOCTYPE html>
 <title>flootah</title>
 <link rel="stylesheet" type="text/css" href="index.css">
+<script src="index.js"></script>
 <!--<script src="index.js"></script>-->
 <body>
     <!------- devtools ------->
     <div id="centerbar"></div>
     <!------- navbar ------->
-
+    <div class="navbar">
+        <div id="bubbleline"></div>
+        <div id="bubblecontainer">
+            <div class="bubble">abt</div>
+            <div class="bubble">proj</div>
+            <div class="bubble">cont</div>
+        </div>
+    </div>
     <!------- main body ------->
     <div id="bodywrapper">
+        <!------- title ------->
         <div class="section" id="title">
-            <span id="mainname">Eduardo Saenz</span><br />
-            <span id="subname">aka "flootah"</span>
+            <div id="profile">
+                <img class="avatar" width="128px" height="128px" src="./src/avatar.jpg" alt="flootah">
+                <div id="profileinfo">
+                    <span id="mainname">flootah</span>
+                    <span id="altname">Ed also works.</span>
+                </div>
+                <div id="plugs"> 
+                    <div class="icon"><a href="https://github.com/flootah">               <img src="./src/github.svg"></a></div>
+                    <div class="icon"><a href="https://steamcommunity.com/id/flootah">    <img src="./src/steam.svg"></a></div>
+                    <div class="icon"><a href="https://www.last.fm/user/flootah">         <img src="./src/lastfm.svg"></a></div>
+                    <div class="icon"><a href="https://www.twitch.tv/flootah">            <img src="./src/twitch.svg"></a></div>
+                    <div class="icon"><a href="https://twitter.com/flootah_">             <img src="./src/twitter.svg"></a></div>
+                    <div class="icon"><a href="https://www.youtube.com/flootah">          <img src="./src/youtube.svg"></a></div>
+                </div>
+            </div>
         </div>
+        <!------- about ------->
         <div class="section" id="about">
-            <span class="sectiontitle">About</span>
-            <span id="bio">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span>
+            <p id="talkingpoints">
+                            twenty two<br />
+                            stumbling university kid<br />
+                            good at vidya<br />
+                            okay at code<br />
+                            bad at living.<br />
+                            <br />
+            </p>
+            <span class="sectiontitle">about</span>
+            <p id="bio">    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. <br><br>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. <br><br>It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+            </p>
         </div>
+        <!------- projects ------->
         <div class="section" id="projects">
-            <span class="sectiontitle">Projects</span>
+            <span class="sectiontitle">projects</span>
                 <div id="p_container">
-                    <div class="item">
-                        1
+                    <div class="item" id="flootahv1">
+                        1 <br />
+                        flootah.com v1
+                    </div>
+                    <div class="item" id="flootahv1">
+                        2 <br />
+                        flootah.com v2
                     </div>
                     <div class="item">
-                        2
+                        3 <br />
+                        startpage: welcomehome
                     </div>
                     <div class="item">
-                        3
+                        4 <br />
+                        website: luluco.moe
                     </div>
                     <div class="item">
-                        4
+                        5 <br />
+                        wakaba html5
                     </div>
                     <div class="item">
-                        5
+                        6 <br />
+                        startpage: elk
                     </div>
                 </div>
         </div>
+        <!------- contact ------->
         <div class="section" id="contact">
-            
+            <span class="sectiontitle">contact</span>
         </div>
+        <!------- links ------->
         <div class="section" id="links">
-            
+            <span class="sectiontitle">plugs</span>
         </div>
+        <!-- TODO footer, or something -->
     </div>
 </body>
