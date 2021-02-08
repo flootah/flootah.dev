@@ -1,0 +1,38 @@
+body {
+    background-color: #111;
+    margin-top: 150px;
+}
+
+#center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    width: 500px
+}
+
+img {
+    width: 100%;
+    height: 150px;
+
+    object-fit: cover;
+    border: #ddd 1px solid;
+    margin-bottom: 30px;
+
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+
+p {
+    color: #ddd;
+
+}
+
+p#title {
+    font-size: larger;
+    font-style: italic;
+    margin-bottom: 10px;
+}
