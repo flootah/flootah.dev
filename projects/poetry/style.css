@@ -3,7 +3,7 @@ body {
     margin-top: 100px;
 }
 
-#center {
+#poem {
     display: flex;
     flex-direction: column;
     align-items: center;
