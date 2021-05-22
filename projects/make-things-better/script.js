@@ -6,8 +6,8 @@ function press() {
     console.log(words[i])
     if (i == words.length-1) i = -1
     i++
-    if(presses == 10) {
-        alert("it wont get better.")
+    if(presses == 99) {
+        alert("nothing has changed.")
         return
     }
     presses++
