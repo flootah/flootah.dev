@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<title>flootah</title>
+<link rel="stylesheet" type="text/css" href="../main.css">
+<style>
+.content {
+    padding: 30px;
+}
+</style>
+<body>
+<script src="../main.js"></script>
+<div id="accent"></div>
+<div id="wrapper">
+<div id="sidebar">
+    <div id="burgercontainer" onclick="menu()">
+        <div class="burgerbar1"></div>
+        <div class="burgerbar2"></div>
+        <div class="burgerbar3"></div>
+    </div>
+    <a href="../">home</a>     <br>
+    <a href="./">projects</a> <br>
+    <a href="../about">about</a>    <br>
+    <a href="../blog">blog</a>     <br>
+    <a href="../contact">contact</a>  <br>
+</div>
+
+<div id="contentwrapper" onclick="menuOff()">
+    <div id="background"></div>
+    <div class="content">
+        <h2>projects</h2>
+        <hr>
+        <div class="projectlist">
+            <div class="project-item" onclick="window.location='https://flootah.com/projects/website/flootahv1'">
+                <div class="project-image" style="background-image:url(../src/img/thumb/flootahv1.png)"></div>
+                <div class="project-info">
+                    <h4>website: flootah.com 1.0</h4>
+                    <p>previous website <br>
+                    not much of a looker, but did the job for long enough.</p>
+                </div>
+            </div>
+            <div class="project-item" onclick="window.location='https://flootah.com/projects/startpage/welcomehome'">
+                <div class="project-image" style="background-image:url(../src/img/thumb/welcomehome.png)"></div>
+                <div class="project-info">
+                    <h4>startpage: welcome home</h4>
+                    <p>current startpage <br>
+                    inspired by more /html-css/ threads, but a somewhat original design</p>
+                </div>
+            </div>
+            <div class="project-item" onclick="window.location='http://luluco.moe'">
+                <div class="project-image" style="background-image:url(../src/img/thumb/lulucomoe.png)"></div>
+                <div class="project-info">
+                    <h4>website: luluco.moe</h4>
+                    <p>dormant domain name i bought on a whim <br>
+                    plans to make a small fan-tribute site soon</p>
+                </div>
+            </div>
+            <div class="project-item" onclick="window.location='https://flootah.com/projects/wakaba'">
+                <div class="project-image" style="background-image:url(../src/img/thumb/wakaba.png)"></div>
+                <div class="project-info">
+                    <h4>wakaba html5</h4>
+                    <p>recreation of a .swf file using howler.js to <br>
+                    sync video/music to one another without prerendering</p>
+                </div>
+            </div>
+            <div class="project-item" onclick="window.location='https://flootah.com/projects/startpage/elk'">
+                <div class="project-image" style="background-image:url(../src/img/thumb/elk.png)"></div>
+                <div class="project-info">
+                    <h4>startpage: elk</h4>
+                    <p>a recreation of a startpage from the /html-css/<br>
+                    threads on /wg/ to brush up on html and css again.</p>
+                </div>
+            </div>
+            <div class="project-item" onclick="window.location='https://flootah.com/projects/poetry'">
+                <div class="project-image" style="background-image:url(../src/img/thumb/poetry.png); background-size: contain; background-repeat: no-repeat;"></div>
+                <div class="project-info">
+                    <h4>poetry</h4>
+                    <p>various poems and other artistic ventures</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>
+</body>

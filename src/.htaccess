@@ -1,2 +1,4 @@
-allow from all
-Options All +Indexes
+<Files>
+Order Deny,Allow
+Deny from All
+</Files>

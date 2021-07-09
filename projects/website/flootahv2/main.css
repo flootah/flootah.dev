@@ -206,8 +206,8 @@ p {
 }
 
 content ~ p, p.about, p.blog, p.contact {
-    font-size: 0.8vw;
-    width: 25vw;
+    font-size: 1em;
+    width: 500px;
 }
 
 .project-info > p {
