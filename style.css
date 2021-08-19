@@ -96,30 +96,92 @@ a {
 }
 
 #links {
-    text-align: right;
+    text-align: left;
 }
 
 .list {
-    width: fit-content;
+    width: 100%;
 }
 
 /* projects */
-.list a {
+.listitem {
     display: flex;
     flex-direction: row;
     align-content: center;
-    margin: 10px 0;
+    padding: 5px 0;
+    margin: 2px 0;
+    transition: background-color 0.1s;
 }
 
-.list a span {
+.listitem span {
     padding: 0;
     margin: auto 65px auto 0;
 }
 
-.list a h4 {
-    margin: auto 0;
+.listitem h4 {
+    margin: auto 20px auto 0;
+    transition: margin 0.1s;
 }
 
+.listitem:hover {
+    background-color: rgba(238, 238, 238, 0.1);
+}
+
+.listitem:hover > h4 {
+    margin: auto 20px auto 10px;
+}
+
+.list input[type=checkbox] {
+    visibility: hidden;
+    position: fixed;
+    top: -9999px;
+    right: -9999px;
+}
+
+.list input[type=checkbox]:checked + .projectcontent {
+    height: 100px;
+    padding-top: 10px;
+}
+
+.projectcontent {
+    height: 0;
+    position: relative;
+    overflow: hidden;
+    transition: height 0.5s, padding-top 0.5s;
+    padding-top: 0px;
+}
+
+.projectcontent > hr {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    right: 0;
+    margin: 0;
+    margin-right: 200px;
+    background-color: #eee;
+    border: 0.1px solid white;
+}
+
+.projectcontent > hr.tick {
+    transform: rotate(45deg);
+    transform-origin: 0% 0%;
+    margin-right: 130px;
+    width: 10px;
+    visibility: hidden;
+}
+
+.projectcontent > img {
+    height: 90px;
+    width: 100px;
+    float: left;
+    margin-right: 35px;
+    border-radius: 50%;
+    
+}
+
+.projectcontent > a {
+    text-decoration: underline;
+}
 
 img#avatar {
     border-radius: 47%;
