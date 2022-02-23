@@ -1,0 +1,14 @@
+body {
+    box-sizing: border-box;
+    background-color: #111;
+    padding: 500px 0px;
+    margin: 0;
+}
+
+#tape {
+    margin-top: 100px;
+    height: 50px;
+    width: 100vw;
+    background-image: url("taperepeat.png");
+    background-size: contain;
+}
