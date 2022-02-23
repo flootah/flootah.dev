@@ -1,12 +1,26 @@
+@font-face {
+    font-family: proggy;
+    src: url(ProggyTiny.ttf);
+  }
+
 body {
     box-sizing: border-box;
     background-color: #111;
-    padding: 500px 0px;
+    padding: 200px 0px;
     margin: 0;
 }
 
+p {
+    font-family: proggy;
+    font-size: 20pt;
+    color: #eee;
+    width: 100vw;
+    text-align: center;
+    margin: 50px 0;
+}
+
 #tape {
-    margin-top: 100px;
+    margin: 150px 0;
     height: 50px;
     width: 100vw;
     background-image: url("taperepeat.png");
