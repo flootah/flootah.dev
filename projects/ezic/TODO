@@ -1,0 +1,46 @@
+add door open sfx to index
+allow room iframes only be accessible via iframes
+
+add locations:
+    // homestem
+
+    core memories?:
+
++++++++++++
+
+copied from phone:
+
+songs get longer as deeper areas are explored.
+ex. 59s loops at homestem, full / long ambience at "gardens" or dead ends
+ex. subareas are same tune played at 70%
+
+homestem connects to all worlds.
+keep filestucture /ezic/homestem?
+i want to rename project. something crypic or meaningless?
+something meaningful but not apparent? acryonyms dont work well.
+perhaps /homestem/[room] is more appropriate?
+perhaps a subdomain is more appropriate? unsure how filesystem works in this case. would possibly require a real host? does github limit you? can github use subdomains?
+ex. homestem.flootah.dev/[room]
+
+will i focus storytelling on being nonverbal?
+yume nikki focuses on atmosphere. poetry and puzzles require author/audience communition which can remove atmosphere.
+tough call.
+
+should user/password prompts be included? should they give hints?
+ex. deeper areas, new areas, vulnerable topics..
+this implies that puzzles will be a part of the project.
+also implies puzzle hints n3ed be included, implying verbal communication between author and audience
+
++++++++++++
+
+3/13/2022
+
+i have decided that in in order to keep interest while exploring,
+there must be something for the dreamer to "collect".
+humans enjoy hoarding, after all.
+
+therefore, what dreamers will be hoarding is information.
+information that allows them to dig deeper into the well.
+what they will also hoard is memories. dead ends must /mean/ something.
+they have to look beautiful. tell a story. be vulnerable.
+ideally, the way there will hint at it, too. make it make sense.

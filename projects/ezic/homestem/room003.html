@@ -1,0 +1,32 @@
+<html>
+    <title>
+        homestem
+    </title>
+    <link rel="stylesheet" type="text/css" href="../script/room.css">
+
+    <div id="bg"></div>
+    <a href="room002.html">return</a>
+
+    <style>
+        body {
+            background: url(../src/bg002.jpg) repeat;
+            animation: bganim 60s linear infinite;
+            backdrop-filter: blur(5px);
+            margin: 0;
+        }
+
+        @keyframes bganim {
+            from {
+                background-position-x: 0px;
+                background-position-y: 0px;
+            }
+            to {
+                background-position-x: -600px;
+                background-position-y: 599px;
+            }
+        }
+    </style>
+
+    <script>
+        window.parent.chSource("bgm006.mp3")
+    </script>

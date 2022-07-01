@@ -1,0 +1,43 @@
+body {
+    font-family: helvetica, arial, sans-serif;
+    margin: 0;
+    background-color: #EADECE;
+  }
+
+.flex {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+    width: 100%;
+}
+
+img {
+    display: inline-block;
+    border: #111111 2px solid;
+}
+
+.play img{
+    border: none;
+}
+
+.title {
+    color: #111111;
+    font-size: 32pt;
+    font-weight: bold;
+}
+
+.section {
+    margin: 100px 0px;
+    width: 1000px;
+
+    gap: 50px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    vertical-align: middle;
+    
+    color:#111111;
+}

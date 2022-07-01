@@ -5,9 +5,9 @@
 
 body {
     box-sizing: border-box;
-    background-color: #111;
-    padding: 200px 0px;
-    margin: 0;
+    background-color: rgb(3, 1, 2);
+    text-align: center;
+    padding-top: 400px;
 }
 
 p {
@@ -19,10 +19,30 @@ p {
     margin: 50px 0;
 }
 
-#tape {
-    margin: 150px 0;
-    height: 50px;
-    width: 100vw;
-    background-image: url("taperepeat.png");
-    background-size: contain;
+#door {
+    background-image: url("src/spr_door_closed.png");
+    height: 90px;
+    width: 51px;
+    background-size: cover;
+    image-rendering: pixelated;
+    display: inline-block;
+    overflow: hidden;
+}
+
+#door:hover {
+    cursor: pointer;
+}
+
+@keyframes open {
+    50% {
+        background-image: url("src/spr_door_opena.png");
+    }
+
+    to {
+        background-image: url("src/spr_door_openb.png");
+    }
+}
+
+#door.open {
+    animation: open 200ms forwards step-end;
 }
