@@ -2,17 +2,17 @@
     <title>
         homestem
     </title>
+    
     <link rel="stylesheet" type="text/css" href="../script/room.css">
-
-    <div id="bg"></div>
-    <a href="room002.html">return</a>
+    <a href="room002.html">return..</a>
+    <a href="room004.html">forward</a>
 
     <style>
         body {
             background: url(../src/bg002.jpg) repeat;
             animation: bganim 60s linear infinite;
-            backdrop-filter: blur(5px);
-            margin: 0;
+            animation-delay: 0s;
+            backdrop-filter: blur(5px) brightness(70%);
         }
 
         @keyframes bganim {
@@ -28,5 +28,5 @@
     </style>
 
     <script>
-        window.parent.chSource("bgm006.mp3")
+        window.parent.chSource("bgm006.mp3");
     </script>

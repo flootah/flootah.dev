@@ -12,6 +12,10 @@ function chVolume(value) {
     Howler.volume(value);
   }
 
+function chRate(value) {
+    bgm.rate(value);
+}
+
 function chSource(source) {
     bgm.unload();
     bgm = new Howl({

@@ -7,16 +7,24 @@ body {
     user-select: none;
 }
 
+#content {
+    display: flex;
+    flex-direction: row;
+}
+
 iframe {
     width: 700px;
     height: 600px;
+    margin: 50px;
     border: 2px #eee solid;
     overflow: hidden;
+    display: block;
 }
 
 input {
-    margin: 50px 0;
+    margin: 50px 0px;
     height: 100px;
     width: 10px;
-    -webkit-appearance: slider-vertical
+    -webkit-appearance: slider-vertical;
+    align-self: center;
 }

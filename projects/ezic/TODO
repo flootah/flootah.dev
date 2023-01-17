@@ -1,10 +1,9 @@
 add door open sfx to index
 allow room iframes only be accessible via iframes
 
-add locations:
-    // homestem
-
-    core memories?:
+locations:
+HOMESTEM
+introductory stem.
 
 +++++++++++
 
@@ -26,7 +25,7 @@ will i focus storytelling on being nonverbal?
 yume nikki focuses on atmosphere. poetry and puzzles require author/audience communition which can remove atmosphere.
 tough call.
 
-should user/password prompts be included? should they give hints?
+should user/password prompts be included? should they give hints? a la notpr0n
 ex. deeper areas, new areas, vulnerable topics..
 this implies that puzzles will be a part of the project.
 also implies puzzle hints n3ed be included, implying verbal communication between author and audience
@@ -44,3 +43,14 @@ information that allows them to dig deeper into the well.
 what they will also hoard is memories. dead ends must /mean/ something.
 they have to look beautiful. tell a story. be vulnerable.
 ideally, the way there will hint at it, too. make it make sense.
+
++++++++++++
+
+it's probably important to lay out this formula as a microcasm in homestem.
+what is that, though?
+ > explore the "level"
+ > solve a puzzle within
+ > discover a garden, with cryptic meanings, stories, and whatnot.
+ >> hopefully, these tie together with the theme of the level.
+ * sidenote: what's a better name than "level"? i want something cuter like garden.
+ ** ooh, maybe "stem?" would make homestem feel a bit literal, but.. i kinda like it
