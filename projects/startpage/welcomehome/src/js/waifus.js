@@ -22,7 +22,15 @@ var Waifus = {
         "tsumugi kotobuki",
         "izumi sakurai",
         "chito and yuuri",
-        "rin shima"
+        "rin shima",
+        "kasuga ayumu",
+        "rin",
+        "mizuhara koyomi",
+        "yamada ryo",
+        "gotou hitori",
+        "ijichi nijika",
+        "pa-san",
+        "iwakura lain",
     ],
 
     file:[
@@ -33,7 +41,15 @@ var Waifus = {
         "tsumugikotobuki.png",
         "izumisakurai.png",
         "chitoyuuri.png",
-        "rinshima.jpg"
+        "rinshima.jpg",
+        "kasugaayumu.jpeg",
+        "rin.jpeg",
+        "mizuharakoyomi.jpeg",
+        "yamadaryo.jpeg",
+        "gotouhitori.jpeg",
+        "ijichinijika.jpeg",
+        "pa-san.jpeg",
+        "iwakuralain.jpeg",
     ],
 
     numWaifus:undefined,    //number of waifus detected, based on number of names.
