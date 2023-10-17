@@ -1,0 +1,398 @@
+﻿@charset "utf-8";
+@font-face {
+    font-family:"haxrcorp";
+    src:url("src/font/haxrcorp_4089_cyrillic_altgr.eot?") format("eot"),
+        url("src/font/haxrcorp_4089_cyrillic_altgr.woff") format("woff"),
+        url("src/font/haxrcorp_4089_cyrillic_altgr.ttf") format("truetype"),
+        url("src/font/haxrcorp_4089_cyrillic_altgr.svg#HaxrCorp-4089-Cyrillic-AltGr") format("svg");
+        font-weight:normal;font-style:normal;
+}
+
+@font-face {
+    font-family: 'pixelmplus';
+    src: url('src/font/pixelmplus12-regular-webfont.woff2') format('woff2'),
+         url('src/font/pixelmplus12-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+::-webkit-scrollbar {
+    width: 0;
+}
+
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    font-family: pixelmplus;
+    font-size: small;
+}
+
+body {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    color: white;
+    background-image: url(src/bg_tile.jpg);
+    background-color: #111;
+    background-repeat: repeat;
+}
+
+input:focus {
+    outline: none;
+}
+
+textarea:focus {
+    outline: none;
+}
+
+.time {
+    font-size: large;
+    text-align: right;
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    z-index: 9999;
+}
+
+.time > * {
+    font-size: large;
+}
+
+#seconds {
+    font-size: 70%;
+    vertical-align: bottom;
+}
+
+.containerwrapper {
+    position: relative;
+    margin: 3% 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.containerwrapper > *{
+    position: relative;
+    top: 10%;
+}
+
+.container > * {
+    margin: 5px 0;
+}
+.container {
+    position: relative;
+    top: 10%;
+    margin: 0px auto;
+    width: 1050px;
+    height: 500px;
+    min-height: 500px;
+}
+
+.container-top {
+    margin-top: 0;
+    text-align: center;
+    position: relative;
+    top: 0px;
+    width: 100%;
+    height: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-top::after {
+    content: "welcome home.";
+}
+
+.container-top:hover::after {
+    content: 'お帰りなさい';
+}
+
+
+.container-middle {
+    height: 90%;
+    width: 100%;
+    position: relative;
+    display: flex;
+}
+
+.container-bottom {
+    margin-bottom: 0 !important;
+    display: flex;
+    position: relative;
+    width: 100%;
+    height: 14px;
+}
+
+.container-bottom > * {
+    background-color: #ffffff;
+    margin-right: 5px;
+}
+
+.search {
+    flex-grow: 2;
+}
+
+.button {
+    min-width: 14px;
+}
+
+.button:hover {
+    background-color: #aaaaaa!important
+}
+
+.quote {
+    color: black;
+    text-align: center;
+    margin-right: 0;
+    min-width: 250px;
+}
+
+form {
+    display: block;
+    height: 100%;
+    width: 100%;
+}
+
+input {
+    padding: 3px;
+    display: block;
+    height: 100%;
+    width: 100%;
+    border: none;
+}
+.accent {
+    position: relative;
+    background-color: pink;
+    height: 2px;
+}
+
+.accent#top {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 9999;
+}
+
+.accent#division {
+    margin: 5px auto;
+    width: 1050px;
+}
+
+.main {
+    color: black;
+    background-color: #ffffff;
+    width: 100%;
+    min-width: 595px;
+    margin-right: 5px;
+    height: 100%;
+    display: none;
+    position: relative;
+    left: 0px;
+    overflow: hidden;
+}
+
+#main1 {
+    display: flex;
+    flex-direction: row;
+}
+
+#player {
+    height: 100%;
+    min-width: 595px;
+}
+
+.sidebar {
+    position: relative;
+    right: 0px;
+    min-width: 250px;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position: center, center;
+    background-size: cover;
+    background-color: #ffffff;
+}
+
+.section {
+    text-align: center;
+    background-color: #ffffff;
+    position: relative;
+    padding: 10px;
+    margin: 0;
+    min-width: 150px;
+    height: 100%;
+}
+
+.section > a {
+    height: 27px;
+    line-height: 27px;
+    padding-left: 3px;
+    text-decoration: none;
+    color: black;
+    text-align: left;
+    display: block;
+    transition: background-color 0.2s ease;
+}
+
+.section > a:hover {
+    text-decoration: underline;
+    background-color: #eeeeee;
+    transition: background-color 0.2s ease;
+}
+
+.notes {
+    width: 850px;
+    position: relative;
+    top: 10%;
+    margin: 0px auto;
+}
+
+.newnote {
+    position: absolute;
+    right: 0;
+}
+
+.newnote:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.notebutton {
+    width: 100%;
+    height: 15px;
+    background-color: #DDDDDD;
+    border: none;
+    line-height: 15px;
+}
+
+.notebutton:focus {
+    border: none;
+    outline: none;
+}
+
+.notebutton:active {
+    background-color: #aaaaaa;
+}
+
+#formwrapper {
+    position: relative;
+    top: 0;
+    padding-right: 50px;
+    z-index: 100;
+    font-size: 0;
+    width: 100%;
+    margin-left: 15px
+}
+
+.notecreation {
+    opacity: 1;
+    font-size: 0;
+    height: 38px;
+}
+
+#notetaker {
+    width: 100%;
+    min-height: 30px;
+    max-height: 600px;
+    padding: 0 210px 0 5px;
+    outline: none;
+    border: none;
+    font-size: 15px;
+    line-height: 15px;
+}
+
+.note {
+    transition: background-color 0.2s ease;
+    padding: 5px 3px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.note:hover {
+    transition: background-color 0.2s ease;
+    background-color: rgba(255, 255, 255, 0.1)
+}
+
+.editdel {
+    transition: opacity 0.2s ease;
+    opacity: 0;
+    flex: auto;
+}
+
+.savecancel {
+    opacity: 1;
+    flex: auto;
+    float: right;
+}
+
+.note:hover .editdel {
+    transition: opacity 0.2s ease;
+    opacity: 1;
+}
+
+.edit, .del, .save, .cancel {
+    height: 14px;
+    padding: 0 5px;
+    float: right;
+}
+
+.edit:hover, .del:hover, .save:hover, .cancel:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.edit:before {
+    content: "edit"
+}
+
+.del:before {
+    content: "del"
+}
+
+.cancel:before {
+    content: "cancel"
+}
+
+.save::before {
+    content: "save"
+}
+
+.note .content {
+    width: 70%;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+.note textarea.content {
+    background-color: rgba(255, 255, 255, 0.1) !important;
+    word-wrap: break-word;
+    font-size: 17px;
+    line-height: 15px;
+    resize: none;
+    max-width: 70%;
+    padding: 0 1px;
+    border: none;
+    color: white;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.note .timestamp {
+    min-width: 100%;
+    text-align: right;
+}
+
+.bullet {
+    height: 100%;
+    width: 1%;
+    text-align: center;
+    margin-right: 5px;
+}
+
+.bullet:before {
+    content: "-";
+}

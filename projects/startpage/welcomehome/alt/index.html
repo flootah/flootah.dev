@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<title> ~ </title>
+<link rel="stylesheet" href="index.css">
+
+<body>
+    <div class="accent" id="top"></div>
+    <div class="time" id="datecontainer">
+            <div id="date"></div>
+            <div id="time"></div>
+    </div>
+    <div class="containerwrapper">
+        <div class="container">
+            <div class="container-top"></div>
+
+            <div class="container-middle">
+
+                <div class="main" id="main1">
+                    <div class="section">
+                        <a href="https://www.youtube.com">youtube</a>
+                        <a href="https://www.reddit.com">reddit</a>
+                        <a href="https://flootah.dev">flootah.dev</a>
+                        <a href="https://www.nytimes.com/games/wordle/">wordle</a>
+                        <a href="https://www.nytimes.com/crosswords/game/mini">mini</a>
+                        <a href="https://soundcloud.com">soundcloud</a>
+                        <a href="https://www.last.fm">last.fm</a>
+                    </div>
+
+                    <div class="section">
+                        <a href="https://steamcommunity.com/id/flootah">steam</a>
+                        <a href="https://discordapp.com/channels/@me">discord</a>
+                        <a href="https://mail.google.com/mail/u/1/#inbox">gmail</a>
+                        <a href="https://app.gusto.com/login">gusto</a>
+                        <a href="https://my.guideline.com/">guideline</a>
+                        <a href="https://www.twitch.tv/">twitch</a>
+                        <a href="https://twitter.com/?lang=en">twitter</a>
+                    </div>
+
+                    <div class="section">
+
+                            <a href="https://3.basecamp.com/3184835/">basecamp</a>
+                            <a href="https://dash.cloudflare.com/">cloudflare</a>
+                            <a href="https://cloud.mongodb.com/">mongodb</a>
+                            <a href="https://dropbox.com">dropbox</a>   
+                            <a href="https://phx.my.salesforce.com/">salesforce</a>
+                            <a href="https://us.promapp.com/phoenix/">nintex process manager</a>
+                            <a href="https://phxcapitalgroup-313169.workflowcloud.com/"">nintex workflows</a>
+                            <a href="https://account.assuresign.net/#/login">nintex assuresign (templates)</a>
+                    </div>
+
+                    <div class="section">
+                        <a href="http://localhost:3000/">localhost:3000</a>
+                        <a href="http://localhost:5500/">localhost:5500</a>
+                        <a href="https://phxcapitalgroup.com/">phoenix capital home</a>
+                        <a href="https://qa.investor-portal.pages.dev/">investor portal - qa</a>
+                        <a href="https://admin-qa.phxcapitalgroup.com">admin portal - qa</a>
+                        <a href="https://invest.phxcapitalgroup.com">investor portal - prod</a>
+                        <a href="https://admin.phxcapitalgroup.com">admin portal - prod</a>
+                        <a href="https://github.com/Phoenix-Capital-Group/Investor-Portal">github</a>
+                    </div>
+
+                    
+                </div>
+
+                <div class="main" id="main2">
+                    <iframe id="player" src="https://www.youtube.com/embed/videoseries?list=PLEJgY4BDDrvMxKYS3zGIAmtHxbpDJC8ZI" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                    --> </div>
+
+                <div class="main" id="main3" style = "justify-content:center; align-items: center; text-align: center;">
+                        this is a placeholder page. <br />
+                        please don't think too much about it.
+                </div>
+
+                
+
+                <div class="sidebar" id="waifupic"></div>
+            </div>
+
+            <div class="container-bottom">
+                <div class="button" id="button1"></div>
+                <div class="button" id="button2"></div>
+                <div class="button" id="button3"></div>
+                <div class="search">
+                    <form action="https://google.com/search" target="_blank">
+                        <input name="q" placeholder="search...">
+                    </form>
+                </div>
+                <div class="quote" id="waifuname"></div>
+            </div>
+        </div>
+        
+        <div class="accent" id="division"></div>
+
+        <div class="notes" id="notes">
+            <div class="notecreation">
+                <span class="newnote" id="newnote" onclick="toggleForm()">new note...</span>
+                <div id="formwrapper" style="display: none;">
+                    <textarea id="notetaker" placeholder="note..." onkeydown="autoGrow(this)"></textarea>
+                    <button class="notebutton" onclick="newNote()">Submit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script src="src/js/waifus.js"></script>
+<script src="src/js/time.js"></script>
+<script src="src/js/buttons.js"></script>
+<script src="src/js/notes.js"></script>
