@@ -23,7 +23,7 @@ body {
     font-size: 1em;
     background-color: #111;
     background-image: url(./src/bg_tile_dark.png);
-    backdrop-filter: hue-rotate(250deg);
+    backdrop-filter: hue-rotate(250deg) brightness(90%);
     background-repeat: repeat;
     background-size: 10px;
     animation: bganim 3s;
@@ -37,8 +37,8 @@ body {
 
 
 @keyframes bganim {
-from {background-position: 0px 0px;}
-to {background-position: 50px 50px;}
+    from {background-position: 0px 0px;}
+    to {background-position: 50px 50px;}
 }
 
 #header {
@@ -119,6 +119,32 @@ span.newlines {
 .list {
     width: 100%;
     max-width: 700px;
+}
+
+.poetrylist {
+    width: 100%;
+    max-width: 700px;
+    height: 250px;
+
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    column-gap: 60px;
+}
+
+@media (max-width: 700px) {
+    .poetrylist {
+        
+    }
+}
+
+.poetrylist .listitem {
+    
+}
+
+.poetrylist a span {
+    min-width: 100px;
+    margin: 0 !important;
 }
 
 /* projects */

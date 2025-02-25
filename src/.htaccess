@@ -1,4 +1,5 @@
-<Files>
-Order Deny,Allow
-Deny from All
+# Deny direct access to all files in this directory
+<Files "*">
+    Order Allow,Deny
+    Deny from all
 </Files>

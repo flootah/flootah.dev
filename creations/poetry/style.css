@@ -1,0 +1,76 @@
+body {
+    background-color: #111;
+    padding-top: 100px;
+    margin: 0;
+
+    background-image: url(../../src/bg_tile_dark.png);
+    backdrop-filter: hue-rotate(50deg) brightness(60%);
+    background-repeat: repeat;
+    background-size: 10px;
+    animation: bganim 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+#poem, #list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    width: 500px
+}
+
+img {
+    width: 100%;
+    height: 150px;
+
+    object-fit: cover;
+    border: #ddd 1px solid;
+    margin-bottom: 30px;
+
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+
+audio {
+    margin-top: 150px;
+    height: 25px;
+}
+
+p, a {
+    color: #ddd;
+    white-space: pre-wrap;
+}
+
+p#title {
+    font-size: 20pt;
+    font-style: italic;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+@keyframes bganim {
+    from {background-position: 0px 0px;}
+    to {background-position: 50px 50px;}
+}
+
+.spoiler {
+    background-color: black;
+    color: black;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+}
+
+.spoiler:hover {
+    background-color: rgba(0, 0, 0, 0);
+    color: inherit;
+}
+
+.italic {
+    font-style: italic;
+}
+    
