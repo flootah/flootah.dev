@@ -259,5 +259,5 @@ p.center {
     background: #eee; /* WebKit/Blink Browsers */
   }
 ::-moz-selection {
-    background: #222; /* Gecko Browsers */
+    background: #eee; /* Gecko Browsers */
 }
