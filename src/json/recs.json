@@ -1,0 +1,51 @@
+{
+  "sections": [
+    {
+      "title": "tunes",
+      "items": [
+        { "title": "devi mccallion (aka cats millionaire, girls rituals, etc...)", "href":"https://www.youtube.com/watch?v=2Bn6dF4S1EM" },
+        { "title": "weatherday", "href":"https://www.youtube.com/watch?v=790zITcigto" },
+        { "title": "jamie p / flavor foley", "href": "https://www.youtube.com/watch?v=LvYL8u4p-aM" },
+        { "title": "sweet trip", "href": "https://www.youtube.com/watch?v=MSq0gOJ9AGA" },
+        { "title": "daft punk", "href": "https://www.youtube.com/watch?v=mdw1JeDjWH8" },
+        { "title": "lemon demon", "href": "https://www.youtube.com/watch?v=4LeSFBy2bZU" },
+        { "title": "low roar", "href": "https://www.youtube.com/watch?v=VNv91s6zPT0" },
+        { "title": "tatsuro yamashita", "href": "https://www.youtube.com/watch?v=VH3USHaZJzs" },
+        { "title": "mother mother", "href": "https://www.youtube.com/watch?v=2-oYb35fDXs" },
+        { "title": "MF DOOM", "href": "https://www.youtube.com/watch?v=FbpEnkDQnhk" },
+        { "title": "datfootdive", "href": "https://www.youtube.com/watch?v=Xk_eYSUsMm4" },
+        { "title": "death's dynamnic shroud.wmv", "href": "https://www.youtube.com/watch?v=25YqRRvl9gk" },
+        { "title": "r0", "href": "https://www.youtube.com/watch?v=Gu-vETUeRSY" }
+      ]
+    },
+    {
+      "title": "animu",
+      "items": [
+        { "title": "city: the animation", "href": "https://anilist.co/anime/181841/CITY-THE-ANIMATION/" },
+        { "title": "bocchi the rock!!", "href": "https://anilist.co/anime/130003/Bocchi-the-Rock/" },
+        { "title": "nichijou", "href": "https://anilist.co/anime/10165/Nichijou/" },
+        { "title": "serial experiments lain", "href": "https://anilist.co/anime/339/serial-experiments-lain/" },
+        { "title": "neon genesis evangelion", "href": "https://anilist.co/anime/30/Shin-Seiki-Evangelion/" },
+        { "title": "girl's last tour", "href": "https://anilist.co/anime/99420/Shoujo-Shuumatsu-Ryokou/" },
+        { "title": "little witch academia", "href": "https://anilist.co/anime/14349/Little-Witch-Academia/" },
+        { "title": "the night is short, walk on girl!", "href": "https://anilist.co/anime/97917/Yoru-wa-Mijikashi-Arukeyo-Otome/" },
+        { "title": "lulucooooooo", "href": "https://anilist.co/anime/21637/Uchuu-Patrol-Luluco/" }
+      ]
+    },
+    {
+      "title": "vidya",
+      "items": [
+        { "title": "smash melee", "href": "https://slippi.gg/" },
+        { "title": "guilty gear strive", "href": "https://store.steampowered.com/app/1384160/GUILTY_GEAR_STRIVE/" },
+        { "title": "yume nikki/yume 2kki", "href": "https://store.steampowered.com/app/650700/Yume_Nikki/" },
+        { "title": "death stranding", "href": "https://store.steampowered.com/app/1850570/DEATH_STRANDING_DIRECTORS_CUT/" },
+        { "title": "DOOM", "href": "https://store.steampowered.com/app/2300/DOOM_II/" },
+        { "title": "vacant kingdom", "href": "https://store.steampowered.com/app/1704730/Vacant_Kingdom/" },
+        { "title": "disco elysium", "href": "https://store.steampowered.com/app/632470/Disco_Elysium__The_Final_Cut/" },
+        { "title": "portal", "href": "https://store.steampowered.com/app/620/Portal_2/" },
+        { "title": "silent hill 2", "href": "https://en.wikipedia.org/wiki/Silent_Hill_2" },
+        { "title": "signalis", "href": "https://store.steampowered.com/app/1262350/SIGNALIS/" }
+      ]
+    }
+  ]
+}

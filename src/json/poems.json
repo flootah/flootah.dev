@@ -1,0 +1,31 @@
+{
+  "items":
+    [
+      { "title": "dada and all that come along", "date": "Aug 2025", "href": "./poetry/depressionanguishdeathanxiety" },
+      { "title": "words", "date": "Mar 2025", "href": "./poetry/words" },
+      { "title": "worry", "date": "Jan 2025", "href": "./poetry/worry" },
+      { "title": "content", "date": "Jan 2025", "href": "./poetry/content" },
+      { "title": "verse", "date": "Dec 2024", "href": "./poetry/verse" },
+      { "title": "kind-of machine", "date": "July 2023", "href": "./poetry/kind-ofmachine" },
+      { "title": "bio", "date": "July 2023", "href": "./poetry/bio" },
+      { "title": "here?", "date": "Nov 2022", "href": "./poetry/here" },
+      { "title": "whatever matters", "date": "Aug 2022", "href": "./poetry/whatevermatters" },
+      { "title": "it's quiet", "date": "circa 2022", "href": "./poetry/itsquiet" },
+      { "title": "planted hope", "date": "circa 2022", "href": "./poetry/plantedhope" },
+      { "title": "connected", "date": "2021-ish", "href": "./poetry/connected" },
+      { "title": "mind avenue", "date": "2021-ish", "href": "./poetry/mindavenue" },
+      { "title": "navigator", "date": "2021-ish", "href": "./poetry/navigator" },
+      { "title": "011001100110110001101111", "date": "2021-ish", "href": "./poetry/011001100110110001101111" },
+      { "title": "april", "date": "2021-ish", "href": "./poetry/april" },
+      { "title": "fridays", "date": "2021-ish", "href": "./poetry/friday" },
+      { "title": "kind machine", "date": "2021-ish", "href": "./poetry/kindmachine" },
+      { "title": "choosing", "date": "2021-ish", "href": "./poetry/choosing" },
+      { "title": "punching bag", "date": "2021-ish", "href": "./poetry/punchingbag" },
+      { "title": "wings", "date": "2021-ish", "href": "./poetry/wings" },
+      { "title": "dilemma", "date": "2021-ish", "href": "./poetry/dilemma" },
+      { "title": "quiet", "date": "2021-ish", "href": "./poetry/quiet" },
+      { "title": "2d ghost", "date": "2021-ish", "href": "./poetry/2dghost" },
+      { "title": "azure", "date": "2021-ish", "href": "./poetry/azure" },
+      { "title": "twenty", "date": "2019", "href": "./poetry/twenty" }
+    ]
+}

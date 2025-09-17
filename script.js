@@ -1,6 +1,9 @@
 // jsons
 const navJson = '/src/json/nav.json';
+const poemJson = '/src/json/poems.json';
+const recsJson = '/src/json/recs.json';
 
+// functions
 async function generateNavBars(jsonUrl) {
   const topContainerId = 'nav';
   const botContainerId = 'footer';
@@ -51,7 +54,69 @@ async function generateNavBars(jsonUrl) {
   }
 }
 
+async function generatePoemList(jsonUrl) {
+    // get stuff from json
+  const response = await fetch(jsonUrl);
+  if (!response.ok) throw new Error('Failed to load poem JSON');
+
+  const poemJson = await response.json();
+  const poemItems = poemJson.items;
+  const container = document.querySelector('.poetrylist');
+  container.innerHTML = "";
+
+  poemItems.forEach(poem => {
+    const a = document.createElement('a');
+    a.className = 'listitem';
+    a.href = poem.href;
+
+    const span = document.createElement('span');
+    span.textContent = poem.date;
+
+    const h4 = document.createElement('h4');
+    h4.textContent = poem.title;
+
+    a.appendChild(span);
+    a.appendChild(h4);
+    container.appendChild(a);
+  });
+}
+
+async function generateRecsList(jsonUrl) {
+    // get stuff from json
+  const response = await fetch(jsonUrl);
+  if (!response.ok) throw new Error('Failed to load recs JSON');
+
+  const recsJson = await response.json();
+  const recsItems = recsJson.sections;
+  const container = document.getElementById("content");
+
+  recsItems.forEach(section => {
+    const h3 = document.createElement("h3");
+    h3.textContent = section.title;
+    container.appendChild(h3);
+
+    section.items.forEach(item => {
+      const a = document.createElement("a");
+      a.href = item.href;
+      a.textContent = item.title;
+      container.appendChild(a);
+      container.appendChild(document.createElement("br"));
+    });
+
+    container.appendChild(document.createElement("br"));
+  });
+}
 
 document.addEventListener('DOMContentLoaded', () => {
   generateNavBars(navJson); // make navbars
+  
+  // if on creations page, make poem list
+  if (window.location.pathname.includes('/creations')) {
+    generatePoemList(poemJson);
+  }
+
+  // if on recs page, make recs list
+  if (window.location.pathname.includes('/recs')) {
+    generateRecsList(recsJson);
+  }
 });

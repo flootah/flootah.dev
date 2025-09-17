@@ -76,3 +76,11 @@ p#title {
     font-style: italic;
 }
     
+/* extra chrome/mozilla decoration */
+::selection {
+    color: #111;
+    background: #eee; /* WebKit/Blink Browsers */
+  }
+::-moz-selection {
+    background: #eee; /* Gecko Browsers */
+}
