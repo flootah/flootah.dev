@@ -1,0 +1,46 @@
+{
+  "topnav": {
+    "items": [
+      {
+        "title": "home",
+        "link": "/"
+      },
+      {
+        "title": "about",
+        "link": "/about"
+      },
+      {
+        "title": "creations",
+        "link": "/creations"
+      },
+      {
+        "title": "posts",
+        "link": "/posts"
+      },
+      {
+        "title": "recs",
+        "link": "/recs"
+      }
+    ]
+  },
+  "botnav": {
+    "items": [
+      {
+        "title": "git",
+        "link": "https://github.com/flootah"
+      },
+      {
+        "title": "twit",
+        "link": "https://twitter.com/flootah_"
+      },
+      {
+        "title": "yt",
+        "link": "https://youtube.com/flootah"
+      },
+      {
+        "title": "stm",
+        "link": "https://steamcommunity.com/id/flootah"
+      }
+    ]
+  }
+}
