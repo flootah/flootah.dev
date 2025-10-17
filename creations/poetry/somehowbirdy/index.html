@@ -12,10 +12,24 @@
                 from {background-position: 0px 0px;}
                 to {background-position: -50px -50px;}
             }
+
+            audio {
+              margin: 20px;
+              background-color: #eeeeee9a;
+            }
         </style>
+
+        <script>
+          // set audio volume
+          window.onload = function() {
+              var audio = document.querySelector("audio");
+              audio.volume = 0.2;
+          }
+        </script>
     </head>
 
     <div id="poem">
+        <audio controls preload="auto" src="silent poets - hope.mp3" autoplay></audio>
         <img src="bird.jpg" style="object-position: 0% 30%;">
         <p id="title">somehow, it's birdy</p>
         <p style="text-align: center;">
