@@ -596,6 +596,24 @@ h1 {
 	border-color: var(--line);
 }
 
+/* remaining/total, same grammar as .depletion in the result panel */
+.hist-progress {
+	height: 8px;
+	border: 1px solid var(--line);
+	padding: 1px;
+	display: flex;
+}
+
+.hist-progress-fill {
+	background: var(--fg);
+	width: 100%;
+	transition: width 1s linear;
+}
+
+.hist-item.expired .hist-progress-fill {
+	background: var(--dim);
+}
+
 .hist-row {
 	display: flex;
 	justify-content: space-between;
@@ -653,6 +671,9 @@ h1 {
 		animation: none;
 	}
 	.gauge-fill {
+		transition: none;
+	}
+	.hist-progress-fill {
 		transition: none;
 	}
 	body {

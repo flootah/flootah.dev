@@ -421,6 +421,42 @@
 		}, ms)
 	}
 
+	// hidden, selected textarea + execCommand('copy') — the long-standing
+	// fallback for browsers where the async Clipboard API is missing or
+	// rejects. iOS WebKit in particular has no navigator.clipboard at all
+	// outside a secure context, and plain http (e.g. a LAN dev server) is not one
+	function execCommandCopy(text) {
+		try {
+			const ta = document.createElement('textarea')
+			ta.value = text
+			ta.setAttribute('readonly', '')
+			ta.style.position = 'fixed'
+			ta.style.top = '-1000px'
+			ta.style.left = '-1000px'
+			document.body.appendChild(ta)
+			ta.focus()
+			ta.select()
+			ta.setSelectionRange(0, text.length) // iOS needs the explicit range
+			const ok = document.execCommand('copy')
+			document.body.removeChild(ta)
+			return ok
+		} catch (e) {
+			return false
+		}
+	}
+
+	function copyText(text, btn) {
+		const settle = ok => flash(btn, ok ? 'Copied' : 'Copy failed', 1400)
+		if (navigator.clipboard && navigator.clipboard.writeText) {
+			navigator.clipboard
+				.writeText(text)
+				.then(() => settle(true))
+				.catch(() => settle(execCommandCopy(text)))
+		} else {
+			settle(execCommandCopy(text))
+		}
+	}
+
 	/* --- render --- */
 
 	function renderGrid() {
@@ -549,6 +585,14 @@
 
 	// rebuilds the list only when historyItems actually changed identity
 	// (pushed, pruned, cleared) — not on every 1s tick
+	// remaining/total for one history entry, 0 once past its deadline
+	function histProgressPct(item, now) {
+		if (now > item.deadline) return 0
+		const span = item.deadline - item.created
+		if (span <= 0) return 0
+		return Math.max(0, Math.min(100, ((item.deadline - now) / span) * 100))
+	}
+
 	function renderHistory() {
 		el.history.hidden = historyItems.length === 0
 		if (histListVersion === histVersion) return
@@ -563,6 +607,13 @@
 			const li = document.createElement('li')
 			li.className = 'hist-item' + (expired ? ' expired' : '')
 			li.dataset.id = item.id
+
+			const progress = document.createElement('div')
+			progress.className = 'hist-progress'
+			const progressFill = document.createElement('div')
+			progressFill.className = 'hist-progress-fill'
+			progressFill.style.width = histProgressPct(item, now) + '%'
+			progress.appendChild(progressFill)
 
 			const row = document.createElement('div')
 			row.className = 'hist-row'
@@ -601,7 +652,7 @@
 			saveBtn.disabled = expired
 			actions.append(copyBtn, saveBtn)
 
-			li.append(row, link, actions)
+			li.append(progress, row, link, actions)
 			frag.appendChild(li)
 		})
 
@@ -620,6 +671,8 @@
 			const expired = now > item.deadline
 			const clock = li.querySelector('.hist-clock')
 			if (clock) clock.textContent = expired ? 'expired' : fmtClock(item.deadline - now)
+			const fill = li.querySelector('.hist-progress-fill')
+			if (fill) fill.style.width = histProgressPct(item, now) + '%'
 			if (expired && !li.classList.contains('expired')) newlyExpired = true
 		}
 		// a row just crossed its deadline: force the disabled buttons / link
@@ -696,10 +749,7 @@
 
 	el.copyLinkBtn.addEventListener('click', () => {
 		if (!state.url) return
-		navigator.clipboard
-			.writeText(state.url)
-			.then(() => flash(el.copyLinkBtn, 'Copied', 1400))
-			.catch(() => flash(el.copyLinkBtn, 'Copy failed', 1400))
+		copyText(state.url, el.copyLinkBtn)
 	})
 
 	el.savePngBtn.addEventListener('click', () => {
@@ -737,10 +787,7 @@
 		if (!item) return
 
 		if (btn.dataset.action === 'copy') {
-			navigator.clipboard
-				.writeText(item.url)
-				.then(() => flash(btn, 'Copied', 1400))
-				.catch(() => flash(btn, 'Copy failed', 1400))
+			copyText(item.url, btn)
 		} else if (btn.dataset.action === 'save') {
 			savePngFrom(makeQrCanvas(item.url), item.expiry, btn)
 		}
