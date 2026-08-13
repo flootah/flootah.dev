@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>photowrapper</title>
+		<meta
+			name="description"
+			content="Pick photos, roll them into a zip, and get a QR code to a link that expires on its own."
+		/>
+		<link rel="stylesheet" href="style.css" />
+		<script src="./script/jszip.min.js"></script>
+		<script src="./script/qrcode.min.js"></script>
+		<script src="script.js" defer></script>
+	</head>
+	<body>
+		<main class="panel">
+			<!-- header -->
+			<div class="stack-10">
+				<div class="meta">
+					<span>photowrapper</span><span>Temporary</span>
+				</div>
+				<h1>photowrapper</h1>
+				<p class="desc">
+					Pick photos, roll them into a zip, and get a QR code to a link that
+					expires on its own. Nothing kept here, nothing to clean up.
+				</p>
+			</div>
+
+			<!-- dropzone -->
+			<div class="dropzone" id="dropzone">
+				<span class="dropzone-label">Select photos</span>
+				<span class="dropzone-hint">or drop them here</span>
+			</div>
+			<input type="file" id="fileInput" accept="image/*" multiple hidden />
+
+			<!-- everything below mounts once there is at least one photo -->
+			<div class="stack-20" id="tray" hidden>
+				<!-- manifest -->
+				<div class="stack-10">
+					<div class="manifest-head">
+						<span id="frameCount">Selected &mdash; 0 frames</span
+						><span id="totalSize"></span>
+					</div>
+					<div class="grid" id="grid"></div>
+					<div class="actions">
+						<button type="button" class="text-btn" id="appendBtn">
+							+ append
+						</button>
+						<button type="button" class="text-btn dim" id="selectAllBtn">
+							Select all
+						</button>
+						<span class="actions-hint">tap a frame to select</span>
+					</div>
+					<div class="selbar" id="selbar" hidden>
+						<span id="selCount">0 selected</span>
+						<button type="button" class="btn-primary sm" id="removeSelBtn">
+							Remove 0
+						</button>
+						<button type="button" class="btn-ghost sm" id="clearSelBtn">
+							Clear
+						</button>
+					</div>
+				</div>
+
+				<!-- payload gauge -->
+				<div class="stack-8">
+					<div class="gauge-head">
+						<span>Payload</span><span id="gaugeLabel"></span>
+					</div>
+					<div class="gauge-track"><div class="gauge-fill" id="gaugeFill"></div></div>
+					<div class="gauge-note" id="gaugeNote"></div>
+				</div>
+
+				<!-- expiry + primary action -->
+				<div class="stack-10">
+					<div class="label">Expires after</div>
+					<div class="segmented" id="expiry">
+						<button type="button" data-t="1h">1h</button>
+						<button type="button" data-t="12h">12h</button>
+						<button type="button" data-t="24h" class="on">24h</button>
+						<button type="button" data-t="72h">72h</button>
+					</div>
+					<div class="deadline" id="deadline"></div>
+					<button type="button" class="btn-primary lg" id="shareBtn">
+						Zip and share
+					</button>
+				</div>
+			</div>
+
+			<!-- status -->
+			<div class="status" id="status" hidden>
+				<span class="cursor"></span><span id="statusText"></span>
+			</div>
+
+			<!-- blocked / fallback -->
+			<div class="fallback" id="fallback" hidden>
+				<div class="fallback-head">Another way to hand it over</div>
+				<p class="fallback-body">
+					The browser blocked the upload, so the zip saved to your device. This
+					command posts it and returns a link.
+				</p>
+				<code id="curl"></code>
+			</div>
+
+			<!-- result -->
+			<div class="result" id="result" hidden>
+				<div class="result-top">
+					<div class="result-left">
+						<div class="qr" id="qr"></div>
+						<div class="qr-actions">
+							<button type="button" class="btn-ghost xs" id="savePngBtn">
+								Save PNG
+							</button>
+							<button type="button" class="btn-ghost xs" id="copyPngBtn">
+								Copy image
+							</button>
+						</div>
+					</div>
+					<div class="result-right">
+						<div class="label">Expires in</div>
+						<div class="countdown" id="countdown">--:--:--</div>
+						<div class="depletion"><div class="depletion-fill" id="depletionFill"></div></div>
+						<div class="caption" id="caption"></div>
+					</div>
+				</div>
+				<div class="result-bottom">
+					<a id="link" href="#" target="_blank" rel="noopener"></a>
+					<button type="button" class="btn-ghost md" id="copyLinkBtn">
+						Copy link
+					</button>
+				</div>
+			</div>
+		</main>
+
+		<!-- previously created links, kept in localStorage.
+		     mounts only once there is at least one -->
+		<aside class="history" id="history" hidden>
+			<div class="meta">
+				<span>Recent</span>
+				<button type="button" class="text-btn dim" id="clearHistBtn">Clear</button>
+			</div>
+			<ul class="hist-list" id="histList"></ul>
+			<p class="hist-note">Kept in this browser only. Removed a day after expiry.</p>
+		</aside>
+	</body>
+</html>

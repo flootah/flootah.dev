@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="900" viewBox="0 0 1000 900">
+	<title>photowrapper</title>
+
+	<defs>
+		<!-- the same lit-pixel tile the page drifts in the background -->
+		<pattern id="tile" width="40" height="40" patternUnits="userSpaceOnUse">
+			<rect width="5" height="5" fill="#f2e27a" fill-opacity="0.5" />
+		</pattern>
+	</defs>
+
+	<rect width="1000" height="900" fill="#14130c" />
+	<rect width="1000" height="900" fill="url(#tile)" />
+
+	<!-- photos on the left, becoming QR modules on the right -->
+	<g transform="translate(-15 20)">
+		<!-- the stack, back to front -->
+		<rect
+			x="150"
+			y="250"
+			width="230"
+			height="230"
+			fill="#14130c"
+			stroke="#6e6840"
+			stroke-width="16"
+		/>
+		<rect
+			x="195"
+			y="295"
+			width="230"
+			height="230"
+			fill="#14130c"
+			stroke="#9a9159"
+			stroke-width="16"
+		/>
+		<rect
+			x="240"
+			y="340"
+			width="230"
+			height="230"
+			fill="#1c1a11"
+			stroke="#f2e27a"
+			stroke-width="16"
+		/>
+
+		<!-- what is on the top photo -->
+		<circle cx="303" cy="399" r="24" fill="#f2e27a" />
+		<path
+			d="M258 545 L335 438 L390 505 L430 458 L452 498 L452 545 Z"
+			fill="#f2e27a"
+		/>
+
+		<!-- coming apart in the middle -->
+		<rect x="492" y="348" width="40" height="40" fill="#f2e27a" opacity="0.3" />
+		<rect x="546" y="418" width="40" height="40" fill="#f2e27a" opacity="0.62" />
+		<rect x="492" y="486" width="40" height="40" fill="#f2e27a" opacity="0.42" />
+		<rect x="548" y="540" width="40" height="40" fill="#f2e27a" opacity="0.22" />
+
+		<!-- and landing as a finder pattern: 7 modules of 40 -->
+		<rect
+			x="620"
+			y="350"
+			width="240"
+			height="240"
+			fill="none"
+			stroke="#f2e27a"
+			stroke-width="40"
+		/>
+		<rect x="680" y="410" width="120" height="120" fill="#f2e27a" />
+	</g>
+</svg>
